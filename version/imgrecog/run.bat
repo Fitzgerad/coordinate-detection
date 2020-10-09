@@ -1,0 +1,1 @@
+python imagerecog\recognize.py
