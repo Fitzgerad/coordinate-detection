@@ -2,7 +2,7 @@ import cv2
 import copy
 import numpy as np
 import skimage.morphology as sm
-from skimage import filters, img_as_ubyte, exposure
+from skimage import filters, img_as_ubyte
 from config import *
 
 def minAreaRect(cnt):
@@ -27,9 +27,12 @@ class SubImageProcessor():
         self.region = None
 
     def preprocess(self):
-        edges = filters.sobel(self.gray)
-        edges = img_as_ubyte(edges)
-        ret, binary = cv2.threshold(edges, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
+        # edges = filters.sobel(self.gray)
+        # edges = img_as_ubyte(edges)
+        ret, binary = cv2.threshold(self.gray, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
+        binary = 255 - binary
+        # if SAVE_IMAGES_TAG:
+        #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_binary.png", binary)
         lines = cv2.HoughLinesP(binary, rho=1.0, theta=np.pi/180, threshold=PREPROCESS_THRESHOLD,
                                 lines=None, minLineLength=PREPROCESS_MINLINELENGTH,
                                 maxLineGap=PREPROCESS_MAXLINEGAP)
@@ -37,13 +40,15 @@ class SubImageProcessor():
             for line in lines:
                 x1, y1, x2, y2 = line[0][0], line[0][1], line[0][2], line[0][3]
                 cv2.line(binary, (x1, y1), (x2, y2), 0, PREPROCESS_WIPEWIDTH)
-            # cv2.line(self.img, (x1, y1), (x2, y2), (0, 255, 255), 5)
+                # cv2.line(self.img, (x1, y1), (x2, y2), (0, 255, 255), 5)
+        binary = sm.opening(binary, sm.square(PREPROCESS_FIRSTSQUARE))
         # if SAVE_IMAGES_TAG:
-        #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_binary.png", binary)
+        #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_binary1.png", binary)
         binary = sm.dilation(binary, sm.square(PREPROCESS_FIRSTSQUARE))
         self.dilation = sm.dilation(binary, sm.square(PREPROCESS_SECONDSQUARE))
-        # if SAVE_IMAGES_TAG:
-        #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_dilation.png", self.dilation)
+        # self.dilation = sm.dilation(binary, sm.square(PREPROCESS_FIRSTSQUARE))
+        if SAVE_IMAGES_TAG:
+            cv2.imwrite(IMAGE_PATH + str(self.num) + ".png", self.img)
 
     def findTextRegion(self):
         width, height = self.dilation.shape
@@ -60,6 +65,8 @@ class SubImageProcessor():
                     cv2.line(bg1, (x1, y1), (x2, y2), 255, 10)
                 elif abs(y2 - y1) > 1 / SLOPE * abs(x2 - x1):
                     cv2.line(bg2, (x1, y1), (x2, y2), 255, 10)
+        # bg1 = sm.opening(bg1, sm.square(12))
+        # bg2 = sm.opening(bg2, sm.square(12))
         # if SAVE_IMAGES_TAG:
         #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_bg1.png", bg1)
         #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_bg2.png", bg2)
@@ -118,13 +125,11 @@ class CornerDetector():
         self.bases = None
         self.areas = None
 
-    def cornerDetect(self, img):
-        self.img = copy.deepcopy(img)
+    def cornerDetect_bk(self):
         height, width = self.img.shape[0:2]
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
-        edges = filters.sobel(gray)
-        edges = img_as_ubyte(edges)
-        ret, binary = cv2.threshold(edges, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
+        ret, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
+        binary = 255 - binary
         _, contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         box = None
         area_max = 0
@@ -138,20 +143,51 @@ class CornerDetector():
             approx = cv2.approxPolyDP(cnt, epsilon, True)
             box = minAreaRect(cnt)
             box = np.int0(box)
+        return box
+
+    def cornerDetect(self, img):
+        self.img = copy.deepcopy(img)
+        height, width = self.img.shape[0:2]
+        gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+        # edges = filters.sobel(gray)
+        # edges = img_as_ubyte(edges)
+        # ret, binary = cv2.threshold(edges, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
+        ret, binary = cv2.threshold(gray, 10, 255, 1)
+        binary = sm.dilation(binary, sm.disk(3))
+        _, contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        box = None
+        area_max = 0
+        for i in range(len(contours)):
+            cnt = contours[i]
+            area = cv2.contourArea(cnt)
+            if area < area_max:
+                continue
+            area_max = area
+            epsilon = 0.001 * cv2.arcLength(cnt, True)
+            approx = cv2.approxPolyDP(cnt, epsilon, True)
+            box = minAreaRect(cnt)
+            box = np.int0(box)
+        ex = 0
+        if area_max < 3 / 4 * width * height:
+            ex = 350
+            box = self.cornerDetect_bk()
+        cv2.drawContours(img, [box], 0, (0, 255, 0), 10)
+        # cv2.imwrite('test.png', img)
+        # quit()
         self.areas = []
         self.bases = []
-        self.bases.append((max(0, box[0][1] - 50), max(0, box[0][0] - 50)))
-        self.areas.append(self.img[max(0, box[0][1] - 50): min(box[0][1] + 450, height),
-                                   max(0, box[0][0] - 50): min(box[0][0] + 450, width)])
-        self.bases.append((max(0, box[1][1] - 50), max(0, box[1][0] - 450)))
-        self.areas.append(self.img[max(0, box[1][1] - 50): min(box[1][1] + 450, height),
-                                   max(0, box[1][0] - 450): min(box[1][0] + 50, width)])
-        self.bases.append((max(0, box[2][1] - 450), max(0, box[2][0] - 450)))
-        self.areas.append(self.img[max(0, box[2][1] - 450): min(box[2][1] + 50, height),
-                                   max(0, box[2][0] - 450): min(box[2][0] + 50, width)])
-        self.bases.append((max(0, box[3][1] - 450), max(0, box[3][0] - 50)))
-        self.areas.append(self.img[max(0, box[3][1] - 450): min(box[3][1] + 50, height),
-                                   max(0, box[3][0] - 50): min(box[3][0] + 450, width)])
+        self.bases.append((max(0, box[0][1] - SHORT_EXTENSION), max(0, box[0][0] - SHORT_EXTENSION)))
+        self.areas.append(self.img[max(0, box[0][1] - SHORT_EXTENSION): min(box[0][1] + LONG_EXTENSION + ex, height),
+                                   max(0, box[0][0] - SHORT_EXTENSION): min(box[0][0] + LONG_EXTENSION + ex, width)])
+        self.bases.append((max(0, box[1][1] - SHORT_EXTENSION), max(0, box[1][0] - LONG_EXTENSION - ex)))
+        self.areas.append(self.img[max(0, box[1][1] - SHORT_EXTENSION): min(box[1][1] + LONG_EXTENSION + ex, height),
+                                   max(0, box[1][0] - LONG_EXTENSION - ex): min(box[1][0] + SHORT_EXTENSION, width)])
+        self.bases.append((max(0, box[2][1] - LONG_EXTENSION - ex), max(0, box[2][0] - LONG_EXTENSION - ex)))
+        self.areas.append(self.img[max(0, box[2][1] - LONG_EXTENSION - ex): min(box[2][1] + SHORT_EXTENSION, height),
+                                   max(0, box[2][0] - LONG_EXTENSION - ex): min(box[2][0] + SHORT_EXTENSION, width)])
+        self.bases.append((max(0, box[3][1] - LONG_EXTENSION - ex), max(0, box[3][0] - SHORT_EXTENSION)))
+        self.areas.append(self.img[max(0, box[3][1] - LONG_EXTENSION - ex): min(box[3][1] + SHORT_EXTENSION, height),
+                                   max(0, box[3][0] - SHORT_EXTENSION): min(box[3][0] + LONG_EXTENSION + ex, width)])
         return [self.bases, self.areas]
 
 
@@ -161,6 +197,7 @@ def getRegionFromSubArea(img, num=''):
     bk = copy.deepcopy(img)
     bases, areas = detector.cornerDetect(img)
     regions = []
+    regions_bk = []
     for i in range(len(areas)):
         region = processor.detectSubArea(areas[i], str(num) + '_' + str(i))
         for j in range(len(region)):
@@ -168,13 +205,19 @@ def getRegionFromSubArea(img, num=''):
                 region[j][k][0] += bases[i][1]
                 region[j][k][1] += bases[i][0]
         regions.extend(region)
+        regions_bk.append(region)
     for box in regions:
         cv2.drawContours(bk, [box], 0, (0, 255, 0), 3)
-    if SAVE_IMAGES_TAG:
-        cv2.imwrite(IMAGE_PATH + str(num) + "_result.png", bk)
+    # if SAVE_IMAGES_TAG:
+    #     cv2.imwrite('result/images/' + str(num) + "_result.png", bk)
     print(len(regions))
-    return regions
+    return regions_bk
 
-#img = cv2.imread("10.jpg")
-#region = getRegionFromSubArea(img)
-# img = img[int(img.shape[0]*0):int(img.shape[0]*0.15), int(img.shape[1]* 0.85):int(img.shape[1]* 1)]
+# for i in range(14, 17):
+#     name = str(i)
+#     if i < 10:
+#         name = '0' + str(i)
+#     img = cv2.imread(name + ".jpg")
+#     region = getRegionFromSubArea(img, i)
+#     # quit()
+# # img = img[int(img.shape[0]*0):int(img.shape[0]*0.15), int(img.shape[1]* 0.85):int(img.shape[1]* 1)]
