@@ -6,10 +6,9 @@ import numpy as np
 global i
 import readFilePath
 import mapDetect
-from config import *
+from detectConfig import *
 from text2excel import *
 from openpyxl import load_workbook,Workbook
-import xlsxwriter
 
 def deleteFile(path):
     if not os.path.exists(path):
@@ -152,7 +151,7 @@ if __name__== '__main__':
             print('picture'+str(dir+1) + " is processing")
             img = cv2.imdecode(np.fromfile(image,dtype=np.uint8),-1)
             #img = img[int(img.shape[0]*0):int(img.shape[0]*0.2), int(img.shape[1]* 0.8):int(img.shape[1]* 1)]
-            region = cut_and_detect.getRegionFromSubArea(img, number[dir])
+            region = mapDetect.getRegionFromSubArea(img, number[dir])
             #path = textpath + "text" + str(i)+ ".txt"
             all_text = []
             for sub in region:#每个子区域

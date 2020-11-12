@@ -3,7 +3,7 @@ import copy
 import numpy as np
 import skimage.morphology as sm
 from skimage import filters, img_as_ubyte
-from config import *
+from detectConfig import *
 
 def minAreaRect(cnt):
     temp = cnt.T

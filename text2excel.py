@@ -1,4 +1,4 @@
-from excelConfiguration import *
+from excelConfig import *
 
 class SheetProcessor():
     def __init__(self):

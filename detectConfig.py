@@ -1,5 +1,7 @@
 import os
 import readFilePath
+import appConfig
+
 PREPROCESS_THRESHOLD = 100
 PREPROCESS_MINLINELENGTH = 100
 PREPROCESS_MAXLINEGAP = 5
@@ -18,14 +20,7 @@ MAX_AREA = 10000
 MIN_RATIO = 2
 MAX_RATIO = 10
 
-SAVE_IMAGES_TAG = True
-SAVE_TEXTS_TAG = False
-ROOT_PATH = readFilePath.getFilePath(mood=readFilePath.SAVE_FILE)
-if SAVE_IMAGES_TAG:
-    IMAGE_PATH = ROOT_PATH + "/images/"
-    if not os.path.exists(IMAGE_PATH):
-        os.makedirs(IMAGE_PATH)
-if SAVE_TEXTS_TAG:
-    TEXT_PATH = ROOT_PATH + "/text/"
-    if not os.path.exists(TEXT_PATH):
-        os.makedirs(TEXT_PATH)
+SAVE_IMAGES_TAG = appConfig.ds.saveImage
+SAVE_TEXTS_TAG = appConfig.ds.saveText
+IMAGE_PATH = appConfig.ds.imageSavePath
+TEXT_PATH = appConfig.ds.textSavePath
