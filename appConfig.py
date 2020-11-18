@@ -91,7 +91,7 @@ class ExcelSettings():
         self.completeSettings()
 
     def completeSettings(self):
-        for
+        return
 
 
 ds = DefaultSettings()

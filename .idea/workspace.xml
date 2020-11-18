@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01488161-454c-4f89-b863-20404151567f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appConfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/test.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/imagerecog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imagerecog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelConfiguration.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapDetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/mapDetect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text2excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/text2excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/appConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/test.ui" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,42 +14,71 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/coordinate_detection$appConfig.coverage" NAME="appConfig Coverage Results" MODIFIED="1605097894066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$paint.coverage" NAME="paint Coverage Results" MODIFIED="1605325669352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$anaxcelgui.coverage" NAME="anaxcelgui Coverage Results" MODIFIED="1605453721017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$MainWindow.coverage" NAME="MainWindow Coverage Results" MODIFIED="1605541010465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$ImageViewerLabel.coverage" NAME="ImageViewerLabel Coverage Results" MODIFIED="1605406536171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$ImageViewer.coverage" NAME="ImageViewer Coverage Results" MODIFIED="1605408314136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$currency.coverage" NAME="currency Coverage Results" MODIFIED="1605325111204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$MainWindow__1_.coverage" NAME="MainWindow (1) Coverage Results" MODIFIED="1605509137599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$FileList.coverage" NAME="FileList Coverage Results" MODIFIED="1605495447816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$main.coverage" NAME="main Coverage Results" MODIFIED="1605324724574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$ImageLabel.coverage" NAME="ImageLabel Coverage Results" MODIFIED="1605445535966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$anaxcel.coverage" NAME="anaxcel Coverage Results" MODIFIED="1605513240900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$licensegui.coverage" NAME="licensegui Coverage Results" MODIFIED="1605455170632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$ImageArea.coverage" NAME="ImageArea Coverage Results" MODIFIED="1605451277167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1868538288">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="csv" value="3" />
           <entry key="md" value="1" />
-          <entry key="py" value="13" />
+          <entry key="png" value="1" />
+          <entry key="py" value="52" />
+          <entry key="qml" value="2" />
+          <entry key="spec" value="2" />
+          <entry key="ui" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="13" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="52" />
+          <entry key="Qt UI file" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="310" />
-          <entry key="py" value="1835" />
+          <entry key="Python Console" value="641" />
+          <entry key="py" value="5390" />
+          <entry key="qml" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2145" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Python" value="6031" />
+          <entry key="QML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -68,99 +89,71 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mapDetect.py">
+        <entry file="file://$PROJECT_DIR$/ui/FileList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/detectConfig.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="255">
+              <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#43#52#0" expanded="true" />
+                <marker date="1605540694868" expanded="true" signature="1445:1451" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readFilePath.py">
+        <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="160">
+              <caret line="32" column="12" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="12" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#43#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appConfig.py">
+        <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#178#364#0" />
-                <element signature="e#401#507#0" />
-                <element signature="e#618#787#0" />
-                <element signature="e#822#2131#0" />
-                <element signature="e#1936#2399#0" />
-                <marker date="1605147108669" expanded="true" signature="61:3335" ph="..." />
-                <marker date="1605147108669" expanded="true" signature="2678:2829" ph="..." />
-                <marker date="1605147108669" expanded="true" signature="3027:3313" ph="..." />
-                <marker date="1605147108669" expanded="true" signature="3265:3271" ph="..." />
+                <element signature="e#43#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excelConfig.py">
+        <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="380">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#43#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="38">
-                <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1406">
+              <caret line="74" column="24" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recognize.py">
+        <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="3515">
+              <caret line="205" column="15" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="15" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#16#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/text2excel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -173,6 +166,29 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Connections</find>
+      <find>qApp</find>
+      <find>loaderEditor</find>
+      <find>QTableView</find>
+      <find>PlaylistModel</find>
+      <find>QMediaPlaylist</find>
+      <find>QImageViewer</find>
+      <find>zoom</find>
+      <find>printAct</find>
+      <find>exit</find>
+      <find>anaxcelgui</find>
+      <find>list</find>
+      <find>action</find>
+      <find>open</find>
+      <find>add</find>
+      <find>addItem</find>
+      <find>table</find>
+      <find>tableWidget</find>
+      <find>self.main</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -188,6 +204,23 @@
         <option value="$PROJECT_DIR$/recognize.py" />
         <option value="$PROJECT_DIR$/detectConfig.py" />
         <option value="$PROJECT_DIR$/appConfig.py" />
+        <option value="D:/Programing/Python/env/Python37/Lib/site-packages/qtmodern/styles.py" />
+        <option value="$PROJECT_DIR$/ui/MainWindow.ui" />
+        <option value="$PROJECT_DIR$/ui/currency.py" />
+        <option value="$PROJECT_DIR$/ui/test.qml" />
+        <option value="$PROJECT_DIR$/ui/ImageViewerWidget.py" />
+        <option value="$PROJECT_DIR$/ui/ImageLabel.py" />
+        <option value="$PROJECT_DIR$/ui/ui_modules/ImageViewer.py" />
+        <option value="$PROJECT_DIR$/ui/fileList.py" />
+        <option value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py" />
+        <option value="$PROJECT_DIR$/ui/main.py" />
+        <option value="$PROJECT_DIR$/ui/mainWindow.py" />
+        <option value="$PROJECT_DIR$/ui/Window.py" />
+        <option value="$PROJECT_DIR$/MainWindow.py" />
+        <option value="$PROJECT_DIR$/ui/ImageArea.py" />
+        <option value="$PROJECT_DIR$/ui/MainWindow.py" />
+        <option value="$PROJECT_DIR$/ui/FileList.py" />
+        <option value="$PROJECT_DIR$/ui/InfoTable.py" />
       </list>
     </option>
   </component>
@@ -209,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,10 +249,22 @@
               <item name="coordinate-detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="coordinate-detection" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="coordinate-detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coordinate-detection" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coordinate-detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coordinate-detection" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="ui_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -238,6 +282,9 @@
       <recent name="D:\13573\Repository\coordinate-detection\ui" />
       <recent name="D:\13573\Repository\coordinate-detection" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\13573\Repository\coordinate-detection\ui" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -251,8 +298,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.appConfig">
-    <configuration name="appConfig" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.MainWindow">
+    <configuration name="FileList" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,12 +307,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/appConfig.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/FileList.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,7 +321,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="drag_and_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="MainWindow (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -287,7 +334,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drag_and_read.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -296,7 +343,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="imageRecog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,12 +351,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imageRecog.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/MainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,7 +365,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="imgDetect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="anaxcel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,12 +373,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imgDetect.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -340,7 +387,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="recognize" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="licensegui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -348,12 +395,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recognize.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -363,19 +410,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.drag_and_read" />
-      <item itemvalue="Python.imageRecog" />
-      <item itemvalue="Python.imgDetect" />
-      <item itemvalue="Python.recognize" />
-      <item itemvalue="Python.appConfig" />
+      <item itemvalue="Python.FileList" />
+      <item itemvalue="Python.anaxcel" />
+      <item itemvalue="Python.licensegui" />
+      <item itemvalue="Python.MainWindow" />
+      <item itemvalue="Python.MainWindow (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.appConfig" />
-        <item itemvalue="Python.recognize" />
-        <item itemvalue="Python.imgDetect" />
-        <item itemvalue="Python.imageRecog" />
-        <item itemvalue="Python.drag_and_read" />
+        <item itemvalue="Python.MainWindow" />
+        <item itemvalue="Python.anaxcel" />
+        <item itemvalue="Python.MainWindow (1)" />
+        <item itemvalue="Python.FileList" />
+        <item itemvalue="Python.licensegui" />
       </list>
     </recent_temporary>
   </component>
@@ -413,12 +460,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.13355705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.22080536" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3243626" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -427,14 +474,37 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3371105" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.40651557" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.45609066" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.23557048" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.12885906" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.22080536" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3243626" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.26487252" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.23557048" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -504,36 +574,8 @@
     <SUITE FILE_PATH="coverage/imagerecog$imgDetect.coverage" NAME="imgDetect Coverage Results" MODIFIED="1600675284341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/excelConfiguration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recognize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/excelConfiguration.py" />
+    <entry file="file://$PROJECT_DIR$/config.py" />
     <entry file="file://D:/Programing/Python/env/Python37/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4142">
@@ -541,47 +583,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/mapDetect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detectConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readFilePath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="38">
-            <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -592,30 +598,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/excelConfig.py">
+    <entry file="file://$PROJECT_DIR$/ui/all_hour.csv" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="38">
+            <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excelConfig.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Programing/Python/env/Python37/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="2894" selection-start-line="2894" selection-end-line="2894" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programing/Python/env/Python37/Lib/site-packages/qtmodern/styles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/currency.py" />
+    <entry file="file://$PROJECT_DIR$/detectConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readFilePath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/paint.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/MainWindow.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ImageViewerWidget.py" />
+    <entry file="file://$PROJECT_DIR$/ui/new.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/test.qml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="180" column="25" lean-forward="true" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ImageViewerLabel.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ImageLabel.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appConfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+        <state relative-caret-position="475">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/ImageViewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutgui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutmain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/330582450/PyQt5/QtWidgets/QFileDialog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="154" column="64" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/main.py" />
+    <entry file="file://$PROJECT_DIR$/ui/Window.py" />
+    <entry file="file://$PROJECT_DIR$/MainWindow.py" />
+    <entry file="file://$PROJECT_DIR$/ui/MainWindow.bk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/MainWindow.ui">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3515">
+          <caret line="205" column="15" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="15" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#178#364#0" />
-            <element signature="e#401#507#0" />
-            <element signature="e#618#787#0" />
-            <element signature="e#822#2131#0" />
-            <element signature="e#1936#2399#0" />
-            <marker date="1605147108669" expanded="true" signature="61:3335" ph="..." />
-            <marker date="1605147108669" expanded="true" signature="2678:2829" ph="..." />
-            <marker date="1605147108669" expanded="true" signature="3027:3313" ph="..." />
-            <marker date="1605147108669" expanded="true" signature="3265:3271" ph="..." />
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="e#43#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/FileList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+            <marker date="1605540694868" expanded="true" signature="1445:1451" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+          <folding>
+            <element signature="e#43#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
