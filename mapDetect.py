@@ -4,6 +4,7 @@ import numpy as np
 import skimage.morphology as sm
 from skimage import filters, img_as_ubyte
 from detectConfig import *
+import ui.FileList as fl
 
 def minAreaRect(cnt):
     temp = cnt.T
@@ -48,7 +49,7 @@ class SubImageProcessor():
         self.dilation = sm.dilation(binary, sm.square(PREPROCESS_SECONDSQUARE))
         # self.dilation = sm.dilation(binary, sm.square(PREPROCESS_FIRSTSQUARE))
         if SAVE_IMAGES_TAG:
-            cv2.imwrite(IMAGE_PATH + str(self.num) + ".png", self.img)
+            cv2.imwrite(IMAGE_PATH +'\\'+ str(self.num) + ".png", self.img)
 
     def findTextRegion(self):
         width, height = self.dilation.shape
@@ -57,7 +58,6 @@ class SubImageProcessor():
         lines = cv2.HoughLinesP(self.dilation, rho=1.0, theta=np.pi / 180, threshold=FINDREGION_THRESHOLD,
                                 lines=None, minLineLength=FINDREGION_MINLINELENGTH,
                                 maxLineGap=FINDREGION_MAXLINEGAP)
-        # print(len(lines))
         if type(lines) == np.ndarray:
             for line in lines:
                 x1, y1, x2, y2 = line[0][0], line[0][1], line[0][2], line[0][3]
@@ -71,7 +71,7 @@ class SubImageProcessor():
         #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_bg1.png", bg1)
         #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_bg2.png", bg2)
         self.region = []
-        _, contours, hierarchy = cv2.findContours(bg1, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(bg1, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         for i in range(len(contours)):
             cnt = contours[i]
             area = cv2.contourArea(cnt)
@@ -88,7 +88,7 @@ class SubImageProcessor():
                 self.region.append(box)
             else:
                 continue
-        _, contours, hierarchy = cv2.findContours(bg2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(bg2, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         for i in range(len(contours)):
             cnt = contours[i]
             area = cv2.contourArea(cnt)
@@ -130,7 +130,7 @@ class CornerDetector():
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
         ret, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
         binary = 255 - binary
-        _, contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         box = None
         area_max = 0
         for i in range(len(contours)):
@@ -154,7 +154,7 @@ class CornerDetector():
         # ret, binary = cv2.threshold(edges, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY)
         ret, binary = cv2.threshold(gray, 10, 255, 1)
         binary = sm.dilation(binary, sm.disk(3))
-        _, contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         box = None
         area_max = 0
         for i in range(len(contours)):
@@ -193,13 +193,15 @@ class CornerDetector():
 
 processor = SubImageProcessor()
 detector = CornerDetector()
-def getRegionFromSubArea(img, num=''):
+def getRegionFromSubArea(img, num='', widget_file_list=None):
     bk = copy.deepcopy(img)
     bases, areas = detector.cornerDetect(img)
     regions = []
     regions_bk = []
     for i in range(len(areas)):
         region = processor.detectSubArea(areas[i], str(num) + '_' + str(i))
+        if widget_file_list != None:
+            widget_file_list.item(int(num)).update(20)
         for j in range(len(region)):
             for k in range(len(region[j])):
                 region[j][k][0] += bases[i][1]
@@ -213,11 +215,3 @@ def getRegionFromSubArea(img, num=''):
     print(len(regions))
     return regions_bk
 
-# for i in range(14, 17):
-#     name = str(i)
-#     if i < 10:
-#         name = '0' + str(i)
-#     img = cv2.imread(name + ".jpg")
-#     region = getRegionFromSubArea(img, i)
-#     # quit()
-# # img = img[int(img.shape[0]*0):int(img.shape[0]*0.15), int(img.shape[1]* 0.85):int(img.shape[1]* 1)]

@@ -4,12 +4,11 @@ import os
 import cv2
 import numpy as np
 global i
-import readFilePath
+import appConfig
 import mapDetect
 from detectConfig import *
 from text2excel import *
 from openpyxl import load_workbook,Workbook
-
 def deleteFile(path):
     if not os.path.exists(path):
         os.makedirs(path)
@@ -32,12 +31,12 @@ def loadImagePath(foldpath):
     return dirpath
 
 def loadImagePath2(foldpath):
-    files = os.listdir(foldpath)
     dirpath = []
-    for i in files:
-        print(i)
-        if i[-4:] == '.jpg':
-            dirpath.append(i[:-4])
+    for i in foldpath:
+        # print(i)
+        if True:
+            j=i.rfind('\\')
+            dirpath.append(i[j+1:-4])
     return dirpath
 
 def writeTextInexcel(path,data):
@@ -135,24 +134,19 @@ def degreePattern(text):
         degree.append('nothing')
     return degree
 
-if __name__== '__main__':
-
+#if __name__== '__main__':
+def main(list_image_path, widget_file_list):
     i=0
     dicts=[]
-    foldpath = readFilePath.getFilePath(0)
-    textpath = 'result/texts/'
-    number = loadImagePath2(foldpath)
-    # deleteFile(textpath)
-    dirpath = loadImagePath(foldpath)
-    for dir in range(len(dirpath)):#每张图
-        image = dirpath[dir]
-        print(image)
-        if image[-4:] == '.jpg':
-            print('picture'+str(dir+1) + " is processing")
+    # foldpath = readFilePath.getFilePath(0)
+    # number = loadImagePath2(list_image_path)
+    # dirpath = loadImagePath(foldpath)
+    # dirpath = list
+    for num in range(len(list_image_path)):#每张图
+        try:
+            image = list_image_path[num]
             img = cv2.imdecode(np.fromfile(image,dtype=np.uint8),-1)
-            #img = img[int(img.shape[0]*0):int(img.shape[0]*0.2), int(img.shape[1]* 0.8):int(img.shape[1]* 1)]
-            region = mapDetect.getRegionFromSubArea(img, number[dir])
-            #path = textpath + "text" + str(i)+ ".txt"
+            region = mapDetect.getRegionFromSubArea(img, str(num), widget_file_list)
             all_text = []
             for sub in region:#每个子区域
                 texts = ['°′″','°′″']
@@ -164,9 +158,6 @@ if __name__== '__main__':
                             sub_region[0][0]=sub_region[0][0]-d
                         sub_image = img[sub_region[0][1]:sub_region[2][1]+d, sub_region[0][0]:sub_region[2][0]+d]
                         height, width = sub_region[2][1] - sub_region[0][1], sub_region[2][0] - sub_region[0][0]
-                        # cv2.imshow("img", sub_image)
-                        # cv2.waitKey(100)
-                        # cv2.destroyAllWindows()
                         if height>width:
                             sub_image1 = np.rot90(sub_image, -1)
                             text = image_to_string(sub_image1)
@@ -180,36 +171,41 @@ if __name__== '__main__':
                             text = image_to_string(sub_image)
                             if len(text) > 8:
                                 texts[0]=text
-                #         if text!='':
-                #             file_path = subimagesPath + str(dir)
-                #             if not os.path.exists(file_path):
-                #                 os.makedirs(file_path)
-                #             cv2.imwrite(os.path.join(file_path, str(k)+ ".png"),sub_image)
-                #             imagelist.append(sub_image)
                 all_text.append(texts)
-            latitude,longtitude='',''
-            path1,path2='',''
+            left,up,right,down= '','','',''
+            path1,path2,path3,path4='','','',''
             if all_text[1][0]!='°′″' or  all_text[1][1] != '°′″'  or  all_text[3][0] != '°′″'  or  all_text[3][1] != '°′″':
-                latitude = all_text[3][0] + ',' + all_text[1][0]
-                longtitude  = all_text[3][1] + ',' + all_text[1][1]
-                path1 = 'file://'+IMAGE_PATH+number[dir]+'_3'+'.png'
-                path2 = 'file://'+IMAGE_PATH+number[dir]+'_1'+'.png'
+                left=all_text[3][1]
+                right=all_text[1][1]
+                up=all_text[1][0]
+                down=all_text[3][0]
             else:
-                latitude = all_text[2][0] + ',' + all_text[2][0]
-                longtitude = all_text[0][1] + ',' + all_text[0][1]
-                path1 = 'file://'+ IMAGE_PATH + number[dir] + '_2' + '.png'
-                path2 = 'file://'+ IMAGE_PATH + number[dir] + '_0' + '.png'
-            dict = {'编号': number[dir], '纬度': latitude, '经度':longtitude,'链接1':path1,'链接2':path2}
-            print(dict)
+                left = all_text[0][1]
+                right = all_text[2][1]
+                up = all_text[0][0]
+                down = all_text[2][0]
+            upleft = left + ',' + up
+            upright = right + ',' + up
+            downleft = left + ',' + down
+            downright = right + ',' + down
+            path0 = '../img/' + str(num) + '_0' + '.png'
+            path1 = '../img/' + str(num) + '_1' + '.png'
+            path2 = '../img/' + str(num) + '_2' + '.png'
+            path3 = '../img/' + str(num) + '_3' + '.png'
+            # dict = {'编号': number[dir], '纬度': latitude, '经度':longtitude,'链接1':path1,'链接2':path2}
+            dict = {'类型': '海图','左上坐标':upleft, '右上坐标':upright,
+              '左下坐标':downleft, '右下坐标':downright, '左上链接':path0,
+              '右上链接':path1, '左下链接':path2, '右下链接':path3}
             dicts.append(dict)
+            widget_file_list.item(num).update(20)
+        except:
+
+            dict = {'类型': '海图', '左上坐标': '', '右上坐标': '',
+                    '左下坐标': '', '右下坐标': '', '左上链接': '',
+                    '右上链接': '', '左下链接': '', '右下链接': ''}
+            dicts.append(dict)
+            widget_file_list.item(num).error()
+        print(num)
     insertInfo(dicts)
-    sheet.saveSheet(os.path.join(ROOT_PATH, 'test.xlsx'))
-    # dirpath = loadImagePath(textpath)
-    # for i in range(len(dirpath)):
-    #     f = open(dirpath[i], 'r+', encoding='utf-8')
-    #     lines=f.readlines()
-    #     #print(lines)
-    #     #左下右上右下左上
-    #     lines=[lines[3],lines[1],lines[2],lines[0]]
-    #
-    #     dict={'编号':number[i],'left_down':lines[3],'right_up':lines[1],'right_down':lines[2],'left_up':lines[0],}
+    sheet.saveSheet(appConfig.ds.tempExcelFile)
+

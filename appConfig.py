@@ -37,6 +37,7 @@ class DefaultSettings():
             self.config_dict = json.loads(f.read())
         except:
             mHistory = False
+            self.config_dict = {}
         f.close()
 
         if mHistory:
@@ -70,11 +71,14 @@ class DefaultSettings():
         self.checkPath(self.textSavePath)
         self.excelSavePath = os.path.normpath('cache\\excel')
         self.checkPath(self.excelSavePath)
+        self.tempExcelFile = os.path.normpath(
+            os.path.join(self.excelSavePath, 'temp.xls'))
+        self.checkFile(self.tempExcelFile)
         self.saveImage = True
         self.saveText = False
 
     def setExcel(self):
-        self.defaultExcelSettings = ExcelSettings(self.config_dict)
+        self.defaultExcelSettings = ExcelSettings(self.config_dict).getSettings()
         self.changePublic('defaultExcelSettings', self.defaultExcelSettings)
 
     def changePublic(self, key, value):
@@ -92,6 +96,9 @@ class ExcelSettings():
 
     def completeSettings(self):
         return
+
+    def getSettings(self):
+        return ""
 
 
 ds = DefaultSettings()

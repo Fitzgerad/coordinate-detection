@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import os
-import MainWindow
-from PyQt5.QtCore import Qt
+import appConfig
+import ui.uiConfig
+import ui.MainWindow
+from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QHBoxLayout, QMainWindow, QMenu, QAction, \
     qApp, QFileDialog, QToolBar, QListWidget, QWidget, QListWidgetItem, QProgressBar, QVBoxLayout
 
-# TODO
 class FileListItem(QListWidgetItem):
     def __init__(self, listWidget, cpath):
         self.listWidget = listWidget
         self.cpath = cpath
         self.spath = os.path.basename(cpath)
+        self.progress = 0
 
         self.widget = QWidget(listWidget)
         self.widget.setStyleSheet("background:transparent;")
@@ -21,7 +23,7 @@ class FileListItem(QListWidgetItem):
         self.frontArea = QWidget(self.widget)
         self.pathLabel = QLabel(self.frontArea)
         self.pathLabel.setText(self.spath)
-        self.pathLabel.setFixedWidth(400)
+        self.pathLabel.setFixedWidth(300)
         self.vFrontLayout = QVBoxLayout()
         self.vFrontLayout.setContentsMargins(0, 0, 0, 0)
         self.vFrontLayout.setSpacing(0)
@@ -31,6 +33,8 @@ class FileListItem(QListWidgetItem):
         self.backArea = QWidget(self.widget)
         self.progressBar = QProgressBar(self.backArea)
         self.progressBar.setValue(0)
+        self.progressBar.setMinimumWidth(100)
+        self.progressBar.setMaximumWidth(150)
         self.progressBar.setAlignment(Qt.AlignCenter)
 
         # self.textLabel = QLabel(self.backArea)
@@ -56,11 +60,22 @@ class FileListItem(QListWidgetItem):
         self.listWidget.setItemWidget(self, self.widget)
 
     def update(self, progress):
-        self.progressBar.setValue(progress)
+        self.progress = max(0, self.progress + progress)
+        self.progress = min(100, self.progress)
+        self.progressBar.setValue(self.progress)
+
+    def error(self):
+        self.progressBar.setTextVisible(False)
+        self.progressBar.setStyleSheet("QProgressBar::chunk{background-color: #F4606C;}")
+        # self.textLabel.setVisible(True)
+        # self.textLabel.setText("分析错误！")
 
 class FileList(QListWidget):
     def __init__(self, mainWindow):
         super().__init__()
+        self.defaultOpenDir = appConfig.ds.defaultOpenPath
+        self.defaultSaveDir = appConfig.ds.defaultSavePath
+        self.setStyleSheet(ui.uiConfig.FILELIST_S)
 
         self.mainWindow = mainWindow
 
@@ -72,10 +87,11 @@ class FileList(QListWidget):
         self.itemSelectionChanged.connect(self.openImage)
 
     def openDir(self):
-        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', '',
+        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', self.defaultOpenDir,
                                                        QFileDialog.ShowDirsOnly)
         if dirName:
             self.clear()
+            self.defaultOpenDir = dirName
             paths = os.listdir(dirName)
             for spath in paths:
                 if os.path.splitext(spath)[-1] in ['.png', '.jpeg', '.jpg', '.bmp']:
@@ -85,9 +101,10 @@ class FileList(QListWidget):
         self.mainWindow.infoTable.updateActions()
 
     def addDir(self):
-        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', '',
+        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', self.defaultOpenDir,
                                                    QFileDialog.ShowDirsOnly)
         if dirName:
+            self.defaultOpenDir = dirName
             paths = os.listdir(dirName)
             for spath in paths:
                 if os.path.splitext(spath)[-1] in ['.png', '.jpeg', '.jpg', '.bmp']:
@@ -121,10 +138,16 @@ class FileList(QListWidget):
     # TODO: Add Icon
     def createActions(self):
         # QIcon("images/control.png")
-        self.openFileAct = QAction("Open &file", self, shortcut="Ctrl+O", enabled=True, triggered=self.openFile)
-        self.addFileAct = QAction("Add &file", self, shortcut="Ctrl+A", enabled=True, triggered=self.addFile)
-        self.openDirAct = QAction("Open &dir", self, enabled=True, triggered=self.openDir)
-        self.addDirAct = QAction("Add &dir", self, enabled=True, triggered=self.addDir)
+        self.openFileAct = self.formatAction("ui/images/image.jpg", "打开\n图片", enabled=True, triggered=self.openFile)
+        self.addFileAct = self.formatAction("ui/images/image.jpg", "添加\n图片", enabled=True, triggered=self.addFile)
+        self.openDirAct = self.formatAction("ui/images/dir.jpg", "打开\n文件夹", enabled=True, triggered=self.openDir)
+        self.addDirAct = self.formatAction("ui/images/dir.jpg", "添加\n文件夹", enabled=True, triggered=self.addDir)
+
+    def formatAction(self, imagePath, text, shortcut=None, enabled=False, triggered=None):
+        icon = QPixmap(imagePath)
+        action = QAction(QIcon(icon), text, self, triggered=triggered)
+        action.setEnabled(enabled)
+        return action
 
     def createToolBar(self):
         self.toolBar = QToolBar()
@@ -135,19 +158,11 @@ class FileList(QListWidget):
         self.toolBar.addAction(self.addFileAct)
         self.toolBar.addAction(self.openDirAct)
         self.toolBar.addAction(self.addDirAct)
-
+        self.toolBar.setIconSize(QSize(40, 40))
+        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def openImage(self):
         if self.currentRow() >= 0:
             path = self.item(self.currentRow()).cpath
             self.mainWindow.imageArea.open(path)
-
-    # TODO: collab with class ListItem
-    def addListItem(self, spath):
-        self.addItem(spath)
-
-# TODO
-class ListItem():
-    def __init__(self, listWidget):
-        return

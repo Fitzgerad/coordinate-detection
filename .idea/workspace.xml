@@ -2,82 +2,87 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01488161-454c-4f89-b863-20404151567f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ui/FileList.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ImageArea.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/InfoTable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/MainWindow.bk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/MainWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/MainWindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/co2emissions.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/combined.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/application-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/control-pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/control-skip-180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/control-skip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/control-stop-square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/control.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/images/speaker-volume.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/test.qml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/darkstyle.qss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Hmovetoolbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Hsepartoolbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Vmovetoolbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Vsepartoolbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_closed-on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_open-on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/checkbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/down_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/down_arrow_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/left_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/left_arrow_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/right_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/right_arrow_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/sizegrip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-branch-end.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-branch-more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-vline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/txt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/undock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/up_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/up_arrow_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/txt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutgui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutmain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/aboutpic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/excel48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon_iEd_1.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/splash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/txt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensemain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (117).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (118).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (121).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (123).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/txt.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ui_modules/ImageViewer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/unnamed.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/appConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/test.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/excelConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/excelConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapDetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/mapDetect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text2excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/text2excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/FileList.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/FileList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ImageArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ImageArea.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/InfoTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/InfoTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/MainWindow.bk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/MainWindow.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/co2emissions.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/combined.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/application-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/control-pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/control-skip-180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/control-skip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/control-stop-square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/control.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/images/speaker-volume.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/test.qml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/uiConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/uiConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/darkstyle.qss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Hmovetoolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Hsepartoolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Vmovetoolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/Vsepartoolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_closed-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_closed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_open-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/branch_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/checkbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/down_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/down_arrow_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/left_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/left_arrow_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/right_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/right_arrow_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/sizegrip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-branch-end.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-branch-more.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/stylesheet-vline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/transparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/undock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/up_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/icons/up_arrow_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/Dark/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/ReadMe.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutgui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutmain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/aboutpic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/excel48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon_iEd_1.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensemain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/s7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (117).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (118).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (121).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/Screenshot (123).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/screenshots/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui_modules/ImageViewer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/unnamed.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/unnamed.xls" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,9 +92,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/coordinate_detection$appConfig.coverage" NAME="appConfig Coverage Results" MODIFIED="1605097894066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1606742352082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/coordinate_detection$paint.coverage" NAME="paint Coverage Results" MODIFIED="1605325669352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules" />
     <SUITE FILE_PATH="coverage/coordinate_detection$anaxcelgui.coverage" NAME="anaxcelgui Coverage Results" MODIFIED="1605453721017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
-    <SUITE FILE_PATH="coverage/coordinate_detection$MainWindow.coverage" NAME="MainWindow Coverage Results" MODIFIED="1605681338455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$MainWindow.coverage" NAME="MainWindow Coverage Results" MODIFIED="1606702651558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/coordinate_detection$ImageViewerLabel.coverage" NAME="ImageViewerLabel Coverage Results" MODIFIED="1605406536171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/coordinate_detection$ImageViewer.coverage" NAME="ImageViewer Coverage Results" MODIFIED="1605408314136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules" />
     <SUITE FILE_PATH="coverage/coordinate_detection$currency.coverage" NAME="currency Coverage Results" MODIFIED="1605325111204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
@@ -105,52 +111,55 @@
     <session id="-1868538288">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.19" value="5" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.22" value="2" />
-          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.20" value="3" />
+          <entry key="project.open.time.21" value="3" />
+          <entry key="project.open.time.22" value="5" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="3" />
-          <entry key="md" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="md" value="2" />
           <entry key="png" value="1" />
-          <entry key="py" value="54" />
+          <entry key="py" value="85" />
           <entry key="qml" value="2" />
           <entry key="spec" value="2" />
-          <entry key="ui" value="3" />
+          <entry key="ui" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="54" />
-          <entry key="Qt UI file" value="3" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="Python" value="85" />
+          <entry key="Qt UI file" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="698" />
-          <entry key="py" value="6698" />
+          <entry key="Python Console" value="709" />
+          <entry key="py" value="9944" />
           <entry key="qml" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="7396" />
+          <entry key="Python" value="10653" />
           <entry key="QML" value="1" />
         </counts>
       </usages-collector>
@@ -162,48 +171,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/FileList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-              <folding>
-                <element signature="e#43#52#0" expanded="true" />
-                <marker date="1605681442646" expanded="true" signature="470:2266" ph="..." />
-                <marker date="1605681442646" expanded="true" signature="3215:3221" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/uiConfig.py">
+        <entry file="file://$PROJECT_DIR$/detectConfig.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
+        <entry file="file://$PROJECT_DIR$/recognize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="32" column="10" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="2736">
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="30" />
               <folding>
-                <element signature="e#43#60#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+        <entry file="file://$PROJECT_DIR$/text2excel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2128">
-              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+            <state relative-caret-position="437">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="32" />
               <folding>
-                <element signature="e#43#60#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/excelConfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2451">
+              <caret line="130" column="30" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -211,8 +215,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="836">
+              <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+              <folding>
+                <element signature="e#43#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/FileList.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2831">
+              <caret line="149" column="21" lean-forward="true" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
               <folding>
                 <element signature="e#43#52#0" expanded="true" />
               </folding>
@@ -221,21 +237,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py">
+        <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1406">
-              <caret line="74" column="24" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="24" />
+            <state relative-caret-position="1311">
+              <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+              <folding>
+                <element signature="e#43#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py">
+        <entry file="file://$PROJECT_DIR$/ui/uiConfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2166">
-              <caret line="134" column="41" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="41" />
+            <state relative-caret-position="19">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2242">
+              <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1606740194770" expanded="true" signature="844:849" ph="..." />
               </folding>
             </state>
           </provider>
@@ -252,29 +280,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Connections</find>
-      <find>qApp</find>
-      <find>loaderEditor</find>
-      <find>QTableView</find>
-      <find>PlaylistModel</find>
-      <find>QMediaPlaylist</find>
-      <find>QImageViewer</find>
-      <find>zoom</find>
-      <find>printAct</find>
-      <find>exit</find>
-      <find>anaxcelgui</find>
-      <find>list</find>
-      <find>action</find>
-      <find>open</find>
-      <find>add</find>
-      <find>addItem</find>
-      <find>table</find>
       <find>tableWidget</find>
       <find>self.main</find>
       <find>header</find>
-      <find>print</find>
       <find>setHorizontalHeade</find>
       <find>fileList</find>
+      <find>createToolBar</find>
+      <find>map</find>
+      <find>print</find>
+      <find>getRegionFromSubArea</find>
+      <find>detectSubArea</find>
+      <find>number</find>
+      <find>loadImagePath2</find>
+      <find>num</find>
+      <find>appConfig</find>
+      <find>writeTextInexcel</find>
+      <find>item</find>
+      <find>win</find>
+      <find>size</find>
+      <find>contours, hierarchy</find>
+      <find>sheet</find>
+      <find>excelSavePath</find>
+      <find>scaleFactor</find>
+      <find>imageLabel</find>
+      <find>checkFile</find>
+      <find>insertInfo</find>
+      <find>SheetProcessor</find>
+      <find>ROW_HEIGHTS</find>
+      <find>cornerDetect</find>
+      <find>defaultOpenDir</find>
+      <find>ana</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -286,11 +321,7 @@
       <list>
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/excelConfiguration.py" />
-        <option value="$PROJECT_DIR$/text2excel.py" />
-        <option value="$PROJECT_DIR$/mapDetect.py" />
-        <option value="$PROJECT_DIR$/recognize.py" />
         <option value="$PROJECT_DIR$/detectConfig.py" />
-        <option value="$PROJECT_DIR$/appConfig.py" />
         <option value="D:/Programing/Python/env/Python37/Lib/site-packages/qtmodern/styles.py" />
         <option value="$PROJECT_DIR$/ui/MainWindow.ui" />
         <option value="$PROJECT_DIR$/ui/currency.py" />
@@ -304,11 +335,18 @@
         <option value="$PROJECT_DIR$/ui/mainWindow.py" />
         <option value="$PROJECT_DIR$/ui/Window.py" />
         <option value="$PROJECT_DIR$/MainWindow.py" />
-        <option value="$PROJECT_DIR$/ui/ImageArea.py" />
+        <option value="$PROJECT_DIR$/ui/uiConfig.py" />
+        <option value="$PROJECT_DIR$/InfoTable.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/mapDetect.py" />
+        <option value="$PROJECT_DIR$/appConfig.py" />
+        <option value="$PROJECT_DIR$/text2excel.py" />
+        <option value="$PROJECT_DIR$/excelConfig.py" />
+        <option value="$PROJECT_DIR$/recognize.py" />
         <option value="$PROJECT_DIR$/ui/MainWindow.py" />
+        <option value="$PROJECT_DIR$/ui/ImageArea.py" />
         <option value="$PROJECT_DIR$/ui/InfoTable.py" />
         <option value="$PROJECT_DIR$/ui/FileList.py" />
-        <option value="$PROJECT_DIR$/ui/uiConfig.py" />
       </list>
     </option>
   </component>
@@ -330,6 +368,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -346,7 +385,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -361,12 +399,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\13573\Repository\coordinate-detection\ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\13573\Repository\coordinate-detection\ui" />
       <recent name="D:\13573\Repository\coordinate-detection" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\13573\Repository\coordinate-detection\ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -381,7 +419,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MainWindow">
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="FileList" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -448,6 +486,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="imagerecog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="anaxcel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="imagerecog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -470,42 +530,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="licensegui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="imagerecog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.FileList" />
       <item itemvalue="Python.anaxcel" />
-      <item itemvalue="Python.licensegui" />
       <item itemvalue="Python.MainWindow" />
       <item itemvalue="Python.MainWindow (1)" />
+      <item itemvalue="Python.__init__" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.MainWindow" />
         <item itemvalue="Python.anaxcel" />
         <item itemvalue="Python.MainWindow (1)" />
         <item itemvalue="Python.FileList" />
-        <item itemvalue="Python.licensegui" />
       </list>
     </recent_temporary>
   </component>
@@ -541,13 +579,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.1375839" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.12550336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.22080536" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3243626" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35410765" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,8 +595,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.40651557" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.45609066" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.40651557" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.45609066" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -667,41 +706,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/mapDetect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/text2excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/all_hour.csv" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="38">
-            <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recognize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excelConfig.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://D:/Programing/Python/env/Python37/Lib/site-packages/pandas/core/indexes/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -717,71 +722,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/currency.py" />
-    <entry file="file://$PROJECT_DIR$/detectConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readFilePath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/ui_modules/paint.py" />
     <entry file="file://$PROJECT_DIR$/ui/ui_modules/MainWindow.py" />
     <entry file="file://$PROJECT_DIR$/ui/ImageViewerWidget.py" />
     <entry file="file://$PROJECT_DIR$/ui/new.csv" />
-    <entry file="file://$PROJECT_DIR$/ui/test.qml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="180" column="25" lean-forward="true" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/test.qml" />
     <entry file="file://$PROJECT_DIR$/ui/ImageViewerLabel.py" />
     <entry file="file://$PROJECT_DIR$/ui/ImageLabel.py" />
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/ImageViewer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutgui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutmain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-258">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/icons/icon.png" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/licensegui.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/ImageViewer.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutgui.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/aboutmain.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/330582450/PyQt5/QtWidgets/QFileDialog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -792,27 +744,7 @@
     <entry file="file://$PROJECT_DIR$/ui/main.py" />
     <entry file="file://$PROJECT_DIR$/ui/Window.py" />
     <entry file="file://$PROJECT_DIR$/MainWindow.py" />
-    <entry file="file://$PROJECT_DIR$/ui/MainWindow.bk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/MainWindow.ui">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.spec" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/330582450/PyQt5/QtPrintSupport.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -820,69 +752,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py" />
+    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py" />
+    <entry file="file://$PROJECT_DIR$/InfoTable.py" />
+    <entry file="file://D:/Programing/Python/env/Python37/Lib/site-packages/pytesseract/pytesseract.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="10" />
+        <state relative-caret-position="351">
+          <caret line="260" column="23" lean-forward="true" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="38">
+            <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readFilePath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/MainWindow.bk.py" />
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/MainWindow.ui" />
+    <entry file="file://$PROJECT_DIR$/mapDetect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="197" column="40" selection-start-line="197" selection-start-column="28" selection-end-line="197" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detectConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2736">
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="30" />
           <folding>
-            <element signature="e#43#60#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+    <entry file="file://$PROJECT_DIR$/text2excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2128">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+        <state relative-caret-position="437">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="32" />
           <folding>
-            <element signature="e#43#60#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excelConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2451">
+          <caret line="130" column="30" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="836">
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
           <folding>
             <element signature="e#43#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcelgui.py">
+    <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1406">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master/anaxcel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="134" column="41" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="41" />
+        <state relative-caret-position="1311">
+          <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/FileList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding>
-            <element signature="e#43#52#0" expanded="true" />
-            <marker date="1605681442646" expanded="true" signature="470:2266" ph="..." />
-            <marker date="1605681442646" expanded="true" signature="3215:3221" ph="..." />
+            <element signature="e#43#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/uiConfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        <state relative-caret-position="19">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2242">
+          <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
+          <folding>
+            <marker date="1606740194770" expanded="true" signature="844:849" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/FileList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="149" column="21" lean-forward="true" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
+          <folding>
+            <element signature="e#43#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
