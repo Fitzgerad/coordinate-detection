@@ -2,6 +2,7 @@ import pytesseract
 import re
 import os
 import cv2
+import copy
 import numpy as np
 global i
 import appConfig
@@ -203,7 +204,7 @@ def main(list_image_path, widget_file_list):
             traceback.print_exc()
             # print('traceback.format_exc():\n%s' % traceback.format_exc())
 
-            dict = {'类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
+            dict = {'编号': ' ', '类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
                     '左下坐标': ' ', '右下坐标': ' '}
             dicts.append(dict)
             widget_file_list.item(num).error()

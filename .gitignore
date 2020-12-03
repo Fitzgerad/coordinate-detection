@@ -1,8 +1,8 @@
 /ui/__pycache__
 /basemap/map.jpg
-/__pycache__
 /build
 /cache
 /dist
+/.idea
 *.db
 *.spec
