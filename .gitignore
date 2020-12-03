@@ -3,6 +3,5 @@
 /build
 /cache
 /dist
-/.idea
 *.db
 *.spec
