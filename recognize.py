@@ -6,6 +6,7 @@ import numpy as np
 global i
 import appConfig
 import mapDetect
+import traceback
 from detectConfig import *
 from text2excel import *
 from openpyxl import load_workbook,Workbook
@@ -88,7 +89,7 @@ def degreePattern(text):
         return degree
     pa1 =  r'[0-9S§]{2,3}[°′″”’\'\"0479]\S{2}[°′″”’\'\"0479]\S{2,3}\d?[°′″’”\'\",，0479][wWENSs§$5]?'
     pa2 = r'[0-9S§]{2,3}[°′″”’\'\"0479]\S{2}[°′″”’\'\"0479][wWENSs§$5]'
-    pattern1 = re.compile(pa1)
+    pattern1 = re.compileim(pa1)
     match1 = pattern1.findall(text)
     pattern2=re.compile(pa2)
     match2 = pattern2.findall(text)
@@ -188,21 +189,22 @@ def main(list_image_path, widget_file_list):
             upright = right + ',' + up
             downleft = left + ',' + down
             downright = right + ',' + down
-            path0 = '../img/' + str(num) + '_0' + '.png'
-            path1 = '../img/' + str(num) + '_1' + '.png'
-            path2 = '../img/' + str(num) + '_2' + '.png'
-            path3 = '../img/' + str(num) + '_3' + '.png'
             # dict = {'编号': number[dir], '纬度': latitude, '经度':longtitude,'链接1':path1,'链接2':path2}
-            dict = {'类型': '海图','左上坐标':upleft, '右上坐标':upright,
-              '左下坐标':downleft, '右下坐标':downright, '左上链接':path0,
-              '右上链接':path1, '左下链接':path2, '右下链接':path3}
+            dict = {'编号': ' ', '类型': '海图','左上坐标':upleft, '右上坐标':upright,
+              '左下坐标':downleft, '右下坐标':downright}
             dicts.append(dict)
             widget_file_list.item(num).update(20)
-        except:
+        except Exception as e:
+            # 这个是输出错误的具体原因，这步可以不用加str，输出
+            print('str(e):\t\t', str(e))  # 输出 str(e):		integer division or modulo by zero
+            print('repr(e):\t', repr(e))  # 输出 repr(e):	ZeroDivisionError('integer division or modulo by zero',)
+            print('traceback.print_exc():')
+            # 以下两步都是输出错误的具体位置的
+            traceback.print_exc()
+            # print('traceback.format_exc():\n%s' % traceback.format_exc())
 
-            dict = {'类型': '海图', '左上坐标': '', '右上坐标': '',
-                    '左下坐标': '', '右下坐标': '', '左上链接': '',
-                    '右上链接': '', '左下链接': '', '右下链接': ''}
+            dict = {'类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
+                    '左下坐标': ' ', '右下坐标': ' '}
             dicts.append(dict)
             widget_file_list.item(num).error()
         print(num)

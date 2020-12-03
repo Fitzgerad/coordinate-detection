@@ -8,12 +8,14 @@ import openpyxl
 import xlwt, xlrd, csv
 import pandas as pd
 import copy
+import os
 
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon, QStandardItemModel
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMainWindow, QMenu, QAction, \
     qApp, QFileDialog, QToolBar, QTableWidget, QTableWidgetItem
+
 
 class myThread (threading.Thread):
     def __init__(self, infoTable):
@@ -49,6 +51,23 @@ class InfoTable(QTableWidget):
 
         self.createActions()
         self.createToolBar()
+        self.itemSelectionChanged.connect(self.openImage)
+
+    def openImage(self):
+        row, col = self.currentRow(), self.currentColumn()
+        if row >= 0:
+            path = ''
+            if col >= 2:
+                if col == 4:
+                    col = 5
+                elif col == 5:
+                    col = 4
+                path = 'cache/img/' + str(row) + '_' + str(col - 2) + '.png'
+            # else:
+            #     path = self.mainWindow.fileList.item(row).cpath
+            if os.path.exists(path):
+                self.mainWindow.imageArea.open(path)
+
 
     # TODO
     def open(self, fileName):
@@ -151,7 +170,7 @@ class InfoTable(QTableWidget):
         self.toolBar.addAction(self.saveAsWordAct)
         self.toolBar.addAction(self.saveAsCSVAct)
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
-        self.toolBar.setIconSize(QSize(40, 40))
+        self.toolBar.setIconSize(QSize(30, 30))
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def updateActions(self):

@@ -8,7 +8,6 @@ from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMainWindow, QMenu, QAction, \
     qApp, QFileDialog, QToolBar
 
-
 class ImageArea(QScrollArea):
     def __init__(self, mainWindow):
         super().__init__()
@@ -70,15 +69,15 @@ class ImageArea(QScrollArea):
     # TODO: Add Icon
     def createActions(self):
         # QIcon("images/control.png")
-        self.zoomInAct = self.formatAction("ui/images/zIn.jpg", "缩小", enabled=False, triggered=self.zoomIn)
-        self.zoomOutAct = self.formatAction("ui/images/zOut.jpg", "放大", enabled=False, triggered=self.zoomOut)
-        self.normalSizeAct = self.formatAction("ui/images/image.jpg", "还原", enabled=False, triggered=self.normalSize)
-        self.fitToWindowAct = self.formatAction("ui/images/fulfill.jpg", "填充", enabled=False, triggered=self.fitToWindow)
+        self.zoomInAct = self.formatAction("ui/images/zIn.jpg", "放大\n25%", enabled=False, triggered=self.zoomIn)
+        self.zoomOutAct = self.formatAction("ui/images/zOut.jpg", "缩小\n25%", enabled=False, triggered=self.zoomOut)
+        self.normalSizeAct = self.formatAction("ui/images/image.jpg", "还原\n尺寸", enabled=False, triggered=self.normalSize)
+        self.fitToWindowAct = self.formatAction("ui/images/fulfill.jpg", "适应\n画布", enabled=False, triggered=self.fitToWindow, checkable = True)
             # QAction("填充", self, enabled=False, checkable=True,
 
-    def formatAction(self, imagePath, text, shortcut=None, enabled=False, triggered=None):
+    def formatAction(self, imagePath, text, shortcut=None, enabled=False, triggered=None, checkable = False):
         icon = QPixmap(imagePath)
-        action = QAction(QIcon(icon), text, self, triggered=triggered)
+        action = QAction(QIcon(icon), text, self, triggered=triggered, checkable=checkable)
         action.setEnabled(enabled)
         return action
 
@@ -92,7 +91,7 @@ class ImageArea(QScrollArea):
         self.toolBar.addAction(self.zoomOutAct)
         self.toolBar.addAction(self.normalSizeAct)
         self.toolBar.addAction(self.fitToWindowAct)
-        self.toolBar.setIconSize(QSize(40, 40))
+        self.toolBar.setIconSize(QSize(30, 30))
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 

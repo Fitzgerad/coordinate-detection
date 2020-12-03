@@ -158,7 +158,7 @@ class FileList(QListWidget):
         self.toolBar.addAction(self.addFileAct)
         self.toolBar.addAction(self.openDirAct)
         self.toolBar.addAction(self.addDirAct)
-        self.toolBar.setIconSize(QSize(40, 40))
+        self.toolBar.setIconSize(QSize(30, 30))
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
