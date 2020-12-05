@@ -31,7 +31,6 @@ class Analyser(QObject):
         self.imagePath = copy.deepcopy(imagePath)
 
     def analyse(self):
-        print(1)
         recognize.main(self.imagePath, self.fileList,
                        self.progressSignal, self.excelSignal)
         self.infoTable.isFree = True
