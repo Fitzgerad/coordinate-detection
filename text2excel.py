@@ -58,6 +58,7 @@ class SheetProcessor():
     def saveSheet(self, file_name):
         self.workbook.save(file_name)
         self.workbook.close()
+        self.worksheet.delete_rows(2, self.worksheet.max_row - 1)
 
 sheet = SheetProcessor()
 

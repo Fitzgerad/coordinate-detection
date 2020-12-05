@@ -20,6 +20,7 @@ class Analyser(QObject):
     progressSignal = pyqtSignal(int, int)
     errorSignal = pyqtSignal(int)
     excelSignal = pyqtSignal(str)
+    closeSignal = pyqtSignal()
 
     def __init__(self, infoTable):
         QObject.__init__(self)
@@ -35,7 +36,7 @@ class Analyser(QObject):
                        self.progressSignal, self.excelSignal)
         self.infoTable.isFree = True
         self.infoTable.updateActions()
-        return
+        self.closeSignal.emit()
 
 
 # class MyThread (QThread):
@@ -73,6 +74,7 @@ class InfoTable(QTableWidget):
         self.analyser.progressSignal.connect(self.analyser.fileList.update)
         self.analyser.excelSignal.connect(self.analyser.infoTable.open)
         self.analyser.errorSignal.connect(self.analyser.fileList.error)
+        self.analyser.closeSignal.connect(self.finishAnalyse)
         # self.mThread.started.connect(self.analyser.analyse)
 
         self.setColumnCount(0)
@@ -125,6 +127,7 @@ class InfoTable(QTableWidget):
     def analyse(self):
         imagePath = []
         for i in range(self.mainWindow.fileList.count()):
+            self.mainWindow.fileList.item(i).progress = 0
             imagePath.append(self.mainWindow.fileList.item(i).cpath)
         # self.analyser.getImages(imagePath)
         self.mThread.start()
@@ -133,6 +136,11 @@ class InfoTable(QTableWidget):
         self.isFree = False
         self.updateActions()
         return
+
+    def finishAnalyse(self):
+        self.mThread.quit()
+        self.isFree = True
+        self.updateActions()
 
     def saveAsExcel(self):
         path = QFileDialog.getSaveFileName(self, '保存文件', 'unnamed', ".xls(*.xls)")

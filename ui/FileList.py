@@ -73,8 +73,6 @@ class FileListItem(QListWidgetItem):
 class FileList(QListWidget):
     def __init__(self, mainWindow):
         super().__init__()
-        self.defaultOpenDir = appConfig.ds.defaultOpenPath
-        self.defaultSaveDir = appConfig.ds.defaultSavePath
         self.setStyleSheet(ui.uiConfig.FILELIST_S)
 
         self.mainWindow = mainWindow
@@ -87,11 +85,12 @@ class FileList(QListWidget):
         self.itemSelectionChanged.connect(self.openImage)
 
     def openDir(self):
-        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', self.defaultOpenDir,
-                                                       QFileDialog.ShowDirsOnly)
+        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹',
+                                                   appConfig.ds.config_dict['defaultOpenPath'],
+                                                   QFileDialog.ShowDirsOnly)
         if dirName:
             self.clear()
-            self.defaultOpenDir = dirName
+            appConfig.ds.changePublic('defaultOpenPath', dirName)
             paths = os.listdir(dirName)
             for spath in paths:
                 if os.path.splitext(spath)[-1] in ['.png', '.jpeg', '.jpg', '.bmp']:
@@ -101,10 +100,11 @@ class FileList(QListWidget):
         self.mainWindow.infoTable.updateActions()
 
     def addDir(self):
-        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹', self.defaultOpenDir,
+        dirName = QFileDialog.getExistingDirectory(self, '请选择图片所在文件夹',
+                                                   appConfig.ds.config_dict['defaultOpenPath'],
                                                    QFileDialog.ShowDirsOnly)
         if dirName:
-            self.defaultOpenDir = dirName
+            appConfig.ds.changePublic('defaultOpenPath', dirName)
             paths = os.listdir(dirName)
             for spath in paths:
                 if os.path.splitext(spath)[-1] in ['.png', '.jpeg', '.jpg', '.bmp']:
@@ -116,23 +116,33 @@ class FileList(QListWidget):
 
     def openFile(self):
         options = QFileDialog.Options()
-        paths, _ = QFileDialog.getOpenFileNames(self, '请选择图片', '',
-                                                  'Images (*.png *.jpeg *.jpg *.bmp)', options=options)
+        paths, _ = QFileDialog.getOpenFileNames(self, '请选择图片',
+                                                appConfig.ds.config_dict['defaultOpenPath'],
+                                                'Images (*.png *.jpeg *.jpg *.bmp)',
+                                                options=options)
         if paths:
             self.clear()
+            dirName = appConfig.ds.config_dict['defaultOpenPath'],
             for cpath in paths:
                 cpath = os.path.normpath(cpath)
                 FileListItem(self, cpath)
+                dirName = os.path.abspath(os.path.dirname(cpath) + os.path.sep + ".")
+            appConfig.ds.changePublic('defaultOpenPath', dirName)
         self.mainWindow.infoTable.updateActions()
 
     def addFile(self):
         options = QFileDialog.Options()
-        paths, _ = QFileDialog.getOpenFileNames(self, '请选择图片', '',
-                                                  'Images (*.png *.jpeg *.jpg *.bmp)', options=options)
+        paths, _ = QFileDialog.getOpenFileNames(self, '请选择图片',
+                                                appConfig.ds.config_dict['defaultOpenPath'],
+                                                'Images (*.png *.jpeg *.jpg *.bmp)',
+                                                options=options)
         if paths:
+            dirName = appConfig.ds.config_dict['defaultOpenPath'],
             for cpath in paths:
                 cpath = os.path.normpath(cpath)
                 FileListItem(self, cpath)
+                dirName = os.path.abspath(os.path.dirname(cpath) + os.path.sep + ".")
+            appConfig.ds.changePublic('defaultOpenPath', dirName)
         self.mainWindow.infoTable.updateActions()
 
     # TODO: Add Icon
