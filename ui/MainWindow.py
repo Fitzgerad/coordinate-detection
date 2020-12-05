@@ -45,6 +45,7 @@ class MainWindow(QMainWindow):
         # self.groupBox.setLayout(self.hLayout)
         # self.setCentralWidget(self.groupBox)
 
+        # self.setWindowFlag(Qt.Tool)
         self.setWindowTitle("地图坐标拾取系统")
         # self.setStyleSheet("QMainWindow::separator { background: rgb(190,231,233) }")
         # self.setWindowFlag(Qt.WindowMaximizeButtonHint, False)

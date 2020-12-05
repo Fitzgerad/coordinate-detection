@@ -2,10 +2,8 @@ import pytesseract
 import re
 import os
 import cv2
-import copy
 import numpy as np
 global i
-import appConfig
 import mapDetect
 import traceback
 from detectConfig import *
@@ -35,7 +33,6 @@ def loadImagePath(foldpath):
 def loadImagePath2(foldpath):
     dirpath = []
     for i in foldpath:
-        # print(i)
         if True:
             j=i.rfind('\\')
             dirpath.append(i[j+1:-4])
@@ -48,22 +45,6 @@ def writeTextInexcel(path,data):
     for row in data:
         worksheet.append(row)
     workbook.save(filename=path)
-
-# def insertimg2excel(imagelists,path):
-#     imagesize=(720/4,1280/4)
-#     list=['J','K','L','M','N','O','P','Q']
-#     wb=load_workbook(path)
-#     ws=wb.active
-#     for i in range(len(imagelists)):
-#         for j in range(len(imagelists[i])):
-#             cell=list[j]+str(i+1)
-#             ws.add_imge(j, cell)
-#     # ws.column_dimensions['J'].width=imagesize[0]*0.14
-#
-#     # ws.add_imge(img,'A1')
-#     #ws.row_dimensions[1].height=imagesize[1]*0.78
-#     wb.save(filename=path)
-
 
 def image_to_string(image):
     text = pytesseract.image_to_string(image, lang='eng')
@@ -136,23 +117,46 @@ def degreePattern(text):
         degree.append('nothing')
     return degree
 
-#if __name__== '__main__':
+def getAllCoor(all_text):
+    if len(all_text[0][0]) >= len(all_text[3][0]):
+        left=all_text[0][0]
+    else:
+        left = all_text[3][0]
+
+    if len(all_text[1][0]) >= len(all_text[2][0]):
+        right = all_text[1][0]
+    else:
+        right = all_text[2][0]
+
+    if len(all_text[0][1]) >= len(all_text[1][1]):
+        up = all_text[0][1]
+    else:
+        up = all_text[1][1]
+
+    if len(all_text[2][1]) >= len(all_text[3][1]):
+        down = all_text[2][1]
+    else:
+        down = all_text[3][1]
+    upleft = left + ',' + up
+    upright = right + ',' + up
+    downleft = left + ',' + down
+    downright = right + ',' + down
+    coorlist = [upleft, upright, downleft, downright]
+    return coorlist
+
 def main(list_image_path, widget_file_list):
     i=0
     dicts=[]
-    # foldpath = readFilePath.getFilePath(0)
-    # number = loadImagePath2(list_image_path)
-    # dirpath = loadImagePath(foldpath)
-    # dirpath = list
+    image=[]
     for num in range(len(list_image_path)):#每张图
         try:
             image = list_image_path[num]
             img = cv2.imdecode(np.fromfile(image,dtype=np.uint8),-1)
             region = mapDetect.getRegionFromSubArea(img, str(num), widget_file_list)
             all_text = []
-            for sub in region:#每个子区域
+            for sub in range(len(region)):#每个子区域
                 texts = ['°′″','°′″']
-                for sub_region in sub:#每个矩形框
+                for sub_region in region[sub]:#每个矩形框
                         d=0
                         if sub_region[0][1]>d:
                             sub_region[0][1]=sub_region[0][1]-d
@@ -161,38 +165,25 @@ def main(list_image_path, widget_file_list):
                         sub_image = img[sub_region[0][1]:sub_region[2][1]+d, sub_region[0][0]:sub_region[2][0]+d]
                         height, width = sub_region[2][1] - sub_region[0][1], sub_region[2][0] - sub_region[0][0]
                         if height>width:
-                            sub_image1 = np.rot90(sub_image, -1)
-                            text = image_to_string(sub_image1)
-                            if len(text) > 8:
-                                texts[1]=text
-                            sub_image2 = np.rot90(sub_image, 1)
-                            text = image_to_string(sub_image2)
-                            if len(text) > 8:
-                                texts[1]=text
+                            if sub==0 or sub == 2:
+                                sub_image1 = np.rot90(sub_image, -1)
+                                text = image_to_string(sub_image1)
+                                if len(text) !=0:
+                                    texts[0]=text
+                            else:
+                                sub_image2 = np.rot90(sub_image, 1)
+                                text = image_to_string(sub_image2)
+                                if len(text) !=0:
+                                    texts[0]=text
                         else:
                             text = image_to_string(sub_image)
-                            if len(text) > 8:
-                                texts[0]=text
+                            if len(text) !=0:
+                                texts[1]=text
                 all_text.append(texts)
-            left,up,right,down= '','','',''
-            path1,path2,path3,path4='','','',''
-            if all_text[1][0]!='°′″' or  all_text[1][1] != '°′″'  or  all_text[3][0] != '°′″'  or  all_text[3][1] != '°′″':
-                left=all_text[3][1]
-                right=all_text[1][1]
-                up=all_text[1][0]
-                down=all_text[3][0]
-            else:
-                left = all_text[0][1]
-                right = all_text[2][1]
-                up = all_text[0][0]
-                down = all_text[2][0]
-            upleft = left + ',' + up
-            upright = right + ',' + up
-            downleft = left + ',' + down
-            downright = right + ',' + down
-            # dict = {'编号': number[dir], '纬度': latitude, '经度':longtitude,'链接1':path1,'链接2':path2}
-            dict = {'编号': ' ', '类型': '海图','左上坐标':upleft, '右上坐标':upright,
-              '左下坐标':downleft, '右下坐标':downright}
+            coorlist = getAllCoor(all_text)
+            print('最终坐标：',coorlist)
+            dict = {'编号': ' ', '类型': '海图','左上坐标':coorlist[0], '右上坐标':coorlist[1],
+              '左下坐标':coorlist[2], '右下坐标':coorlist[3]}
             dicts.append(dict)
             widget_file_list.item(num).update(20)
         except Exception as e:
@@ -204,7 +195,7 @@ def main(list_image_path, widget_file_list):
             traceback.print_exc()
             # print('traceback.format_exc():\n%s' % traceback.format_exc())
 
-            dict = {'编号': ' ', '类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
+            dict = {'类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
                     '左下坐标': ' ', '右下坐标': ' '}
             dicts.append(dict)
             widget_file_list.item(num).error()

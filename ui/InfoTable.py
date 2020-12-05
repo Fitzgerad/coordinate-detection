@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import ui.MainWindow
-import threading
 import sys
 import recognize
 import openpyxl
@@ -10,29 +9,60 @@ import pandas as pd
 import copy
 import os
 
-from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtCore import Qt, QSize, QThread, QMutex, QWaitCondition, pyqtSignal, pyqtSlot, QObject
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon, QStandardItemModel
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMainWindow, QMenu, QAction, \
     qApp, QFileDialog, QToolBar, QTableWidget, QTableWidgetItem
 
+class Analyser(QObject):
 
-class myThread (threading.Thread):
+    startSignal = pyqtSignal()
+    dataSignal = pyqtSignal(object)
+
     def __init__(self, infoTable):
-        threading.Thread.__init__(self)
+        QObject.__init__(self)
         self.infoTable = infoTable
         self.fileList = infoTable.mainWindow.fileList
         self.imagePath = []
 
+        stop_analyze_signal = pyqtSignal()
+        start_print_result = pyqtSignal()
+
     def getImages(self, imagePath):
         self.imagePath = copy.deepcopy(imagePath)
 
-    def run(self):
+    def analyse(self):
+        self.start_print_result.emit()
+        self.stop_analyz_signal.emit()
         recognize.main(self.imagePath, self.fileList)
         self.infoTable.open("cache/excel/temp.xls")
         self.infoTable.isFree = True
         self.infoTable.updateActions()
         return
+
+
+# class MyThread (QThread):
+#     def __init__(self, infoTable):
+#         # super.__init__(self, daemon=True)
+#         super().__init__()
+#         self.mutex = QMutex()
+#         self.condition = QWaitCondition()
+#         self.infoTable = infoTable
+#         self.fileList = infoTable.mainWindow.fileList
+#         self.imagePath = []
+#
+#     def getImages(self, imagePath):
+#         self.imagePath = copy.deepcopy(imagePath)
+#
+#     def run(self):
+#         self.mutex.lock()
+#         recognize.main(self.imagePath, self.fileList)
+#         self.mutex.unlock()
+#         self.infoTable.open("cache/excel/temp.xls")
+#         self.infoTable.isFree = True
+#         self.infoTable.updateActions()
+#         return
 
 class InfoTable(QTableWidget):
     def __init__(self, mainWindow):
@@ -40,7 +70,11 @@ class InfoTable(QTableWidget):
 
         self.mainWindow = mainWindow
         self.isFree = True
-        self.mThread = myThread(self)
+        self.mThread = QThread()
+        self.analyser = Analyser(self)
+        self.analyser.moveToThread(self.mThread)
+        self.analyser.startSignal.connect(self.analyser.analyse)
+        # self.mThread.started.connect(self.analyser.analyse)
 
         self.setColumnCount(0)
         self.setRowCount(0)
@@ -84,18 +118,21 @@ class InfoTable(QTableWidget):
             for i in range(len(df.index)):
                 for j in range(len(df.columns)):
                     self.setItem(i, j, QTableWidgetItem(str(df.iat[i, j])))
-            self.resizeColumnsToContents()
             self.resizeRowsToContents()
+            self.resizeColumnsToContents()
+
 
     # TODO
     def analyse(self):
         imagePath = []
         for i in range(self.mainWindow.fileList.count()):
             imagePath.append(self.mainWindow.fileList.item(i).cpath)
-        self.mThread.getImages(imagePath)
+        # self.analyser.getImages(imagePath)
         self.mThread.start()
-        # self.isFree = False
-        # self.updateActions()
+        self.analyser.dataSignal.emit(imagePath)
+        self.analyser.startSignal.emit()
+        self.isFree = False
+        self.updateActions()
         return
 
     def saveAsExcel(self):
