@@ -144,7 +144,7 @@ def getAllCoor(all_text):
     coorlist = [upleft, upright, downleft, downright]
     return coorlist
 
-def main(list_image_path, widget_file_list):
+def main(list_image_path, xSingal, pSignal, eSignal):
     i=0
     dicts=[]
     image=[]
@@ -152,7 +152,7 @@ def main(list_image_path, widget_file_list):
         try:
             image = list_image_path[num]
             img = cv2.imdecode(np.fromfile(image,dtype=np.uint8),-1)
-            region = mapDetect.getRegionFromSubArea(img, str(num), widget_file_list)
+            region = mapDetect.getRegionFromSubArea(img, str(num), pSignal)
             all_text = []
             for sub in range(len(region)):#每个子区域
                 texts = ['°′″','°′″']
@@ -180,12 +180,12 @@ def main(list_image_path, widget_file_list):
                             if len(text) !=0:
                                 texts[1]=text
                 all_text.append(texts)
+                pSignal.emit(int(num), 10)
             coorlist = getAllCoor(all_text)
             print('最终坐标：',coorlist)
             dict = {'编号': ' ', '类型': '海图','左上坐标':coorlist[0], '右上坐标':coorlist[1],
               '左下坐标':coorlist[2], '右下坐标':coorlist[3]}
             dicts.append(dict)
-            widget_file_list.item(num).update(20)
         except Exception as e:
             # 这个是输出错误的具体原因，这步可以不用加str，输出
             print('str(e):\t\t', str(e))  # 输出 str(e):		integer division or modulo by zero
@@ -198,8 +198,9 @@ def main(list_image_path, widget_file_list):
             dict = {'类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
                     '左下坐标': ' ', '右下坐标': ' '}
             dicts.append(dict)
-            widget_file_list.item(num).error()
+            xSingal.emit(int(num))
         print(num)
     insertInfo(dicts)
     sheet.saveSheet(appConfig.ds.tempExcelFile)
+    eSignal.emit("cache/excel/temp.xls")
 

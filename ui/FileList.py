@@ -166,3 +166,12 @@ class FileList(QListWidget):
         if self.currentRow() >= 0:
             path = self.item(self.currentRow()).cpath
             self.mainWindow.imageArea.open(path)
+
+    def update(self, index, progress):
+        try:
+            self.item(index).update(progress)
+        except:
+            return
+
+    def error(self, index):
+        self.item(index).error()

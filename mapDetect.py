@@ -193,15 +193,17 @@ class CornerDetector():
 
 processor = SubImageProcessor()
 detector = CornerDetector()
-def getRegionFromSubArea(img, num='', widget_file_list=None):
+def getRegionFromSubArea(img, num='', pSignal=None):
     bk = copy.deepcopy(img)
     bases, areas = detector.cornerDetect(img)
+    if pSignal != None:
+        pSignal.emit(int(num), 20)
     regions = []
     regions_bk = []
     for i in range(len(areas)):
         region = processor.detectSubArea(areas[i], str(num) + '_' + str(i))
-        if widget_file_list != None:
-            widget_file_list.item(int(num)).update(20)
+        if pSignal != None:
+            pSignal.emit(int(num), 10)
         for j in range(len(region)):
             for k in range(len(region[j])):
                 region[j][k][0] += bases[i][1]

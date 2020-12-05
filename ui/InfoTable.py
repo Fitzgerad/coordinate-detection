@@ -16,9 +16,10 @@ from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMain
     qApp, QFileDialog, QToolBar, QTableWidget, QTableWidgetItem
 
 class Analyser(QObject):
-
     startSignal = pyqtSignal()
-    dataSignal = pyqtSignal(object)
+    progressSignal = pyqtSignal(int, int)
+    errorSignal = pyqtSignal(int)
+    excelSignal = pyqtSignal(str)
 
     def __init__(self, infoTable):
         QObject.__init__(self)
@@ -26,17 +27,13 @@ class Analyser(QObject):
         self.fileList = infoTable.mainWindow.fileList
         self.imagePath = []
 
-        stop_analyze_signal = pyqtSignal()
-        start_print_result = pyqtSignal()
-
     def getImages(self, imagePath):
         self.imagePath = copy.deepcopy(imagePath)
 
     def analyse(self):
-        self.start_print_result.emit()
-        self.stop_analyz_signal.emit()
-        recognize.main(self.imagePath, self.fileList)
-        self.infoTable.open("cache/excel/temp.xls")
+        print(1)
+        recognize.main(self.imagePath, self.fileList,
+                       self.progressSignal, self.excelSignal)
         self.infoTable.isFree = True
         self.infoTable.updateActions()
         return
@@ -74,6 +71,9 @@ class InfoTable(QTableWidget):
         self.analyser = Analyser(self)
         self.analyser.moveToThread(self.mThread)
         self.analyser.startSignal.connect(self.analyser.analyse)
+        self.analyser.progressSignal.connect(self.analyser.fileList.update)
+        self.analyser.excelSignal.connect(self.analyser.infoTable.open)
+        self.analyser.errorSignal.connect(self.analyser.fileList.error)
         # self.mThread.started.connect(self.analyser.analyse)
 
         self.setColumnCount(0)
@@ -129,7 +129,7 @@ class InfoTable(QTableWidget):
             imagePath.append(self.mainWindow.fileList.item(i).cpath)
         # self.analyser.getImages(imagePath)
         self.mThread.start()
-        self.analyser.dataSignal.emit(imagePath)
+        self.analyser.getImages(imagePath)
         self.analyser.startSignal.emit()
         self.isFree = False
         self.updateActions()
