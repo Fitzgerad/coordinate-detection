@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5b8fa403-558e-496a-9537-a93f1661b6f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appConfig.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/detectConfig.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/excelConfig.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/getBaseInfo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapDetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/mapDetect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readFilePath.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text2excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/text2excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/FileList.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/FileList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ImageArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ImageArea.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/InfoTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/InfoTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/uiConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/uiConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_enabled.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,11 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-              <folding>
-                <element signature="e#43#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="57">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -409,7 +391,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.22080536" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49930653" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49930653" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -418,7 +400,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006935" side_tool="true" weight="0.4469914" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.30028328" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.30028328" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.45609066" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -595,11 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
-          <folding>
-            <element signature="e#43#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>

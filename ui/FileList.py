@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import config.appConfig as appConfig
-import ui.uiConfig as uiConfig
+import config.uiConfig as uiConfig
 import ui.MainWindow
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import ui.MainWindow
-import ui.uiConfig as uiConfig
+import config.uiConfig as uiConfig
 import sys
 import recognize
 import openpyxl

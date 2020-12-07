@@ -5,7 +5,7 @@ import sys
 import ui.FileList
 import ui.ImageArea
 import ui.InfoTable
-import ui.uiConfig as uiConfig
+import config.uiConfig as uiConfig
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
 from PyQt5.QtWidgets import QLabel, QSplitter, QDesktopWidget, QMessageBox, QMainWindow, QMenu, QAction, \

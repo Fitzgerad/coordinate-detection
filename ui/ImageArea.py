@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import ui.MainWindow
-import ui.uiConfig as uiConfig
+import config.uiConfig as uiConfig
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
