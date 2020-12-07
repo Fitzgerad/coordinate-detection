@@ -1,5 +1,5 @@
 import openpyxl
-from excelConfig import *
+from config.excelConfig import *
 
 class SheetProcessor():
     def __init__(self):

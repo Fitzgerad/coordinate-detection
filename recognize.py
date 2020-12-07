@@ -6,7 +6,7 @@ import numpy as np
 global i
 import mapDetect
 import traceback
-from detectConfig import *
+from config.detectConfig import *
 from text2excel import *
 from openpyxl import load_workbook,Workbook
 def deleteFile(path):

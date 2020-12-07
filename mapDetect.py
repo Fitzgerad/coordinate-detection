@@ -3,8 +3,7 @@ import copy
 import numpy as np
 import skimage.morphology as sm
 from skimage import filters, img_as_ubyte
-from detectConfig import *
-import ui.FileList as fl
+from config.detectConfig import *
 
 def minAreaRect(cnt):
     temp = cnt.T
@@ -113,10 +112,10 @@ class SubImageProcessor():
         self.preprocess()
         self.findTextRegion()
         # print(len(self.region))
-        for box in self.region:
-            cv2.drawContours(self.img, [box], 0, (0, 255, 0), 3)
-        if SAVE_IMAGES_TAG:
-            cv2.imwrite(IMAGE_PATH + str(self.num) + "_result.png", self.img)
+        # for box in self.region:
+        #     cv2.drawContours(self.img, [box], 0, (0, 255, 0), 3)
+        # if SAVE_IMAGES_TAG:
+        #     cv2.imwrite(IMAGE_PATH + str(self.num) + "_result.png", self.img)
         return self.region
 
 class CornerDetector():

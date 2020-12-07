@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import os
-import appConfig
-import ui.uiConfig
+import config.appConfig as appConfig
+import ui.uiConfig as uiConfig
 import ui.MainWindow
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
@@ -73,12 +73,11 @@ class FileListItem(QListWidgetItem):
 class FileList(QListWidget):
     def __init__(self, mainWindow):
         super().__init__()
-        self.setStyleSheet(ui.uiConfig.FILELIST_S)
+        self.setStyleSheet(uiConfig.FILELIST_S)
 
         self.mainWindow = mainWindow
 
         self.setBackgroundRole(QPalette.Base)
-        self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
 
         self.createActions()
         self.createToolBar()
@@ -161,15 +160,11 @@ class FileList(QListWidget):
 
     def createToolBar(self):
         self.toolBar = QToolBar()
-        self.toolBar.setMovable(False)
-        # self.toolBar.addSeparator()
-        # self.viewMenu = QMenu("&View", self)
         self.toolBar.addAction(self.openFileAct)
         self.toolBar.addAction(self.addFileAct)
         self.toolBar.addAction(self.openDirAct)
         self.toolBar.addAction(self.addDirAct)
-        self.toolBar.setIconSize(QSize(30, 30))
-        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        self.toolBar.setStyleSheet(uiConfig.TOOLBAR_S)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def openImage(self):

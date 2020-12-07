@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import ui.MainWindow
-
+import ui.uiConfig as uiConfig
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
@@ -16,14 +16,16 @@ class ImageArea(QScrollArea):
         self.scaleFactor = 0.0
 
         self.imageLabel = QLabel()
-        self.imageLabel.setBackgroundRole(QPalette.Dark)
+        self.imageLabel.setBackgroundRole(QPalette.Light)
         self.imageLabel.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         self.imageLabel.setScaledContents(True)
 
-        self.setBackgroundRole(QPalette.Dark)
+        # self.setBackgroundRole(QPalette.Dark)
+        # self.setAlignment(Qt.AlignCenter)
         self.setWidget(self.imageLabel)
         self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         self.setVisible(True)
+        self.setStyleSheet(uiConfig.IMAGEAREA_S)
         # self.mainWindow.setCentralWidget(self)
 
         self.createActions()
@@ -36,7 +38,7 @@ class ImageArea(QScrollArea):
         if fileName:
             image = QImage(fileName)
             if image.isNull():
-                QMessageBox.information(self, "Image Viewer", "Cannot load %s." % fileName)
+                QMessageBox.information(self, "Image Viewer", "无法打开 %s." % fileName)
                 return
 
             self.imageLabel.setPixmap(QPixmap.fromImage(image))
@@ -61,7 +63,10 @@ class ImageArea(QScrollArea):
 
     def fitToWindow(self):
         fitToWindow = self.fitToWindowAct.isChecked()
-        self.setWidgetResizable(fitToWindow)
+        factor = min(self.width() / self.imageLabel.pixmap().width(),
+                    self.height() / self.imageLabel.pixmap().height())
+        # self.setWidgetResizable(fitToWindow)
+        self.scaleImage(factor / self.scaleFactor)
         if not fitToWindow:
             self.normalSize()
         self.updateActions()
@@ -84,15 +89,11 @@ class ImageArea(QScrollArea):
     def createToolBar(self):
         self.toolBar = QToolBar()
         self.toolBar.addSeparator()
-        self.toolBar.setMovable(False)
-        # self.toolBar.addSeparator()
-        # self.viewMenu = QMenu("&View", self)
         self.toolBar.addAction(self.zoomInAct)
         self.toolBar.addAction(self.zoomOutAct)
         self.toolBar.addAction(self.normalSizeAct)
         self.toolBar.addAction(self.fitToWindowAct)
-        self.toolBar.setIconSize(QSize(30, 30))
-        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        self.toolBar.setStyleSheet(uiConfig.TOOLBAR_S)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def updateActions(self):

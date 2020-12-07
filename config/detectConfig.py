@@ -1,6 +1,5 @@
 import os
-import readFilePath
-import appConfig
+import config.appConfig as appConfig
 
 PREPROCESS_THRESHOLD = 100
 PREPROCESS_MINLINELENGTH = 100

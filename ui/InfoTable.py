@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import ui.MainWindow
+import ui.uiConfig as uiConfig
 import sys
 import recognize
 import openpyxl
@@ -37,29 +38,6 @@ class Analyser(QObject):
         self.infoTable.isFree = True
         self.infoTable.updateActions()
         self.closeSignal.emit()
-
-
-# class MyThread (QThread):
-#     def __init__(self, infoTable):
-#         # super.__init__(self, daemon=True)
-#         super().__init__()
-#         self.mutex = QMutex()
-#         self.condition = QWaitCondition()
-#         self.infoTable = infoTable
-#         self.fileList = infoTable.mainWindow.fileList
-#         self.imagePath = []
-#
-#     def getImages(self, imagePath):
-#         self.imagePath = copy.deepcopy(imagePath)
-#
-#     def run(self):
-#         self.mutex.lock()
-#         recognize.main(self.imagePath, self.fileList)
-#         self.mutex.unlock()
-#         self.infoTable.open("cache/excel/temp.xls")
-#         self.infoTable.isFree = True
-#         self.infoTable.updateActions()
-#         return
 
 class InfoTable(QTableWidget):
     def __init__(self, mainWindow):
@@ -143,7 +121,10 @@ class InfoTable(QTableWidget):
         self.updateActions()
 
     def saveAsExcel(self):
-        path = QFileDialog.getSaveFileName(self, '保存文件', 'unnamed', ".xls(*.xls)")
+        path = QFileDialog.getSaveFileName(self,
+                                           '保存文件',
+                                           '未命名',
+                                           ".xls(*.xls)")
         try:
             filename = path[0]
         except:
@@ -171,7 +152,10 @@ class InfoTable(QTableWidget):
         return
 
     def saveAsCSV(self):
-        path = QFileDialog.getSaveFileName(self, 'Save File', 'unnamed', 'CSV(*.csv)')
+        path = QFileDialog.getSaveFileName(self,
+                                           '保存文件',
+                                           '未命名',
+                                           'CSV(*.csv)')
         try:
             filename = path[0]
         except:
@@ -206,15 +190,11 @@ class InfoTable(QTableWidget):
     def createToolBar(self):
         self.toolBar = QToolBar()
         self.toolBar.addSeparator()
-        self.toolBar.setMovable(False)
-        # self.toolBar.addSeparator()
-        # self.viewMenu = QMenu("&View", self)
         self.toolBar.addAction(self.analyseAct)
         self.toolBar.addAction(self.saveAsExcelAct)
         self.toolBar.addAction(self.saveAsWordAct)
         self.toolBar.addAction(self.saveAsCSVAct)
-        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
-        self.toolBar.setIconSize(QSize(30, 30))
+        self.toolBar.setStyleSheet(uiConfig.TOOLBAR_S)
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def updateActions(self):
