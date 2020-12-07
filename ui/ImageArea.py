@@ -16,25 +16,24 @@ class ImageArea(QScrollArea):
         self.scaleFactor = 0.0
 
         self.imageLabel = QLabel()
-        self.imageLabel.setBackgroundRole(QPalette.Light)
+        self.imageLabel.setStyleSheet(uiConfig.IMAGELABEL_S)
         self.imageLabel.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         self.imageLabel.setScaledContents(True)
+        # try:
+        #     image = QImage("ui/images/welcome.jpg")
+        #     self.imageLabel.setPixmap(QPixmap.fromImage(image))
+        # except:
+        self.imageLabel.setText("WELCOME")
 
-        # self.setBackgroundRole(QPalette.Dark)
-        # self.setAlignment(Qt.AlignCenter)
         self.setWidget(self.imageLabel)
         self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         self.setVisible(True)
         self.setStyleSheet(uiConfig.IMAGEAREA_S)
-        # self.mainWindow.setCentralWidget(self)
 
         self.createActions()
         self.createToolBar()
 
     def open(self, fileName):
-        # options = QFileDialog.Options()
-        # fileName, _ = QFileDialog.getOpenFileName(self, 'QFileDialog.getOpenFileName()', '',
-        #                                           'Images (*.png *.jpeg *.jpg *.bmp *.gif)', options=options)
         if fileName:
             image = QImage(fileName)
             if image.isNull():
@@ -108,8 +107,8 @@ class ImageArea(QScrollArea):
         self.adjustScrollBar(self.horizontalScrollBar(), factor)
         self.adjustScrollBar(self.verticalScrollBar(), factor)
 
-        self.zoomInAct.setEnabled(self.scaleFactor < 3.0)
-        self.zoomOutAct.setEnabled(self.scaleFactor > 0.333)
+        self.zoomInAct.setEnabled(self.scaleFactor < 5.0)
+        self.zoomOutAct.setEnabled(self.scaleFactor > 0.2)
 
     def adjustScrollBar(self, scrollBar, factor):
         scrollBar.setValue(int(factor * scrollBar.value()

@@ -14,6 +14,18 @@ IMAGEAREA_S = \
         "qproperty-alignment: AlignCenter;" \
     "}"
 
+IMAGELABEL_S = \
+    "QLabel { " \
+        "border: 0px;" \
+        "margin: 0px;" \
+        "padding: 0px;" \
+        "color: white;" \
+        "font-size: 150px;" \
+        "font-weight: bold;" \
+        "font-family: Georgia, serif;" \
+        "background: #BEEDC7;" \
+    "}"
+
 INFOTABLE_S = \
     "QTableWidget { " \
         "border: 0px;" \
