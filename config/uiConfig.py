@@ -14,6 +14,12 @@ IMAGEAREA_S = \
         "qproperty-alignment: AlignCenter;" \
     "}"
 
+INFOTABLE_S = \
+    "QTableWidget { " \
+        "border: 0px;" \
+        "margin: 0px;" \
+        "padding: 0px;" \
+    "}"
 
 TOOLBAR_S = \
     "QToolBar { " \

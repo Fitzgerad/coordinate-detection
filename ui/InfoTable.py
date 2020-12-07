@@ -58,8 +58,9 @@ class InfoTable(QTableWidget):
         self.setColumnCount(0)
         self.setRowCount(0)
 
-        self.setBackgroundRole(QPalette.Dark)
+        self.setStyleSheet(uiConfig.INFOTABLE_S)
         self.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
+
         self.setVisible(True)
 
         self.createActions()
