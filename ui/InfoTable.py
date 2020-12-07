@@ -3,7 +3,7 @@
 import ui.MainWindow
 import config.uiConfig as uiConfig
 import sys
-import recognize
+import identify
 import openpyxl
 import xlwt, xlrd, csv
 import pandas as pd
@@ -33,7 +33,7 @@ class Analyser(QObject):
         self.imagePath = copy.deepcopy(imagePath)
 
     def analyse(self):
-        recognize.main(self.imagePath, self.fileList,
+        identify.main(self.imagePath, self.fileList,
                        self.progressSignal, self.excelSignal)
         self.infoTable.isFree = True
         self.infoTable.updateActions()
