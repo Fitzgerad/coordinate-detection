@@ -1,1 +1,0 @@
-python imgDetect.py

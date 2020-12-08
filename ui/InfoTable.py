@@ -68,6 +68,7 @@ class InfoTable(QTableWidget):
         self.itemSelectionChanged.connect(self.openImage)
 
     def openImage(self):
+        self.resizeCell()
         row, col = self.currentRow(), self.currentColumn()
         if row >= 0:
             path = ''
@@ -98,9 +99,11 @@ class InfoTable(QTableWidget):
             for i in range(len(df.index)):
                 for j in range(len(df.columns)):
                     self.setItem(i, j, QTableWidgetItem(str(df.iat[i, j])))
-            self.resizeRowsToContents()
-            self.resizeColumnsToContents()
+            self.resizeCell()
 
+    def resizeCell(self):
+        self.resizeColumnsToContents()
+        self.resizeRowsToContents()
 
     # TODO
     def analyse(self):

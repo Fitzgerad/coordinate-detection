@@ -9,7 +9,7 @@ import config.uiConfig as uiConfig
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter, QIcon
 from PyQt5.QtWidgets import QLabel, QSplitter, QDesktopWidget, QMessageBox, QMainWindow, QMenu, QAction, \
-    qApp, QFileDialog, QToolBar, QSizePolicy, QVBoxLayout, QPushButton, QGroupBox
+    qApp, QStatusBar, QToolBar, QSizePolicy, QVBoxLayout, QPushButton, QGroupBox
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -21,6 +21,9 @@ class MainWindow(QMainWindow):
         self.imageAreaLabel = self.getLabel(self.imageArea, "图像预览")
         self.infoTable = ui.InfoTable.InfoTable(self)
         self.infoTableLabel = self.getLabel(self.infoTable, "输出列表")
+        self.staBar = QStatusBar()
+        self.staBar.setStyleSheet(uiConfig.STATUSBAR_S)
+        self.setStatusBar(self.staBar)
 
         # 创建一个QSplitter，用来分割窗口
         self.splitter = QSplitter(self)

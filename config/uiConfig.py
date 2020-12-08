@@ -48,11 +48,18 @@ TOOLBAR_S = \
         "width: 1px;" \
     "}"
 
+STATUSBAR_S = \
+    "QStatusBar { " \
+        "background: #8CC7B5;" \
+        "border: 0px;" \
+    "}"
+
 MAINWINDOW_S = \
     "QMainWindow { " \
         "background: blue;" \
         "width: 10px;" \
         "height: 10px;" \
+        "qproperty-contextMenuPolicy: NoContextMenu;" \
     "}"
 
 SPLITER_S = \
@@ -64,6 +71,8 @@ TEXTLABEL_S = \
     "QLabel { " \
         "background: #19CAAD;" \
         "border: 0px;" \
+        "border-top-left-radius: 6px;" \
+        "border-top-right-radius: 6px;" \
         "padding: 8px;" \
         "color: white;" \
         "font-size: 30px;" \
@@ -72,7 +81,7 @@ TEXTLABEL_S = \
 
 GRANDLABEL_S = \
     "QLabel { " \
-        "background: #FFFFFF;" \
+        "background: #BEE7E9;" \
         "margin: 0px;" \
         "padding: 0px;" \
         "border: 0px;" \
