@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import os
+import traceback
 import config.appConfig as appConfig
 import config.uiConfig as uiConfig
 import ui.MainWindow
@@ -16,6 +17,7 @@ class FileListItem(QListWidgetItem):
         self.cpath = cpath
         self.spath = os.path.basename(cpath)
         self.progress = 0
+        self.info_dict = {}
 
         self.widget = QWidget(listWidget)
         self.widget.setStyleSheet("background:transparent;")
@@ -23,7 +25,7 @@ class FileListItem(QListWidgetItem):
         self.frontArea = QWidget(self.widget)
         self.pathLabel = QLabel(self.frontArea)
         self.pathLabel.setText(self.spath)
-        self.pathLabel.setFixedWidth(300)
+        # self.pathLabel.setFixedWidth(300)
         self.vFrontLayout = QVBoxLayout()
         self.vFrontLayout.setContentsMargins(0, 0, 0, 0)
         self.vFrontLayout.setSpacing(0)
@@ -33,8 +35,8 @@ class FileListItem(QListWidgetItem):
         self.backArea = QWidget(self.widget)
         self.progressBar = QProgressBar(self.backArea)
         self.progressBar.setValue(0)
-        self.progressBar.setMinimumWidth(100)
-        self.progressBar.setMaximumWidth(150)
+        # self.progressBar.setMinimumWidth(100)
+        # self.progressBar.setMaximumWidth(150)
         self.progressBar.setAlignment(Qt.AlignCenter)
 
         # self.textLabel = QLabel(self.backArea)
@@ -53,13 +55,15 @@ class FileListItem(QListWidgetItem):
         self.hLayout.setSpacing(0)
         self.hLayout.addWidget(self.frontArea)
         self.hLayout.addWidget(self.backArea)
+        self.hLayout.setStretch(0, 2)
+        self.hLayout.setStretch(1, 1)
         self.widget.setLayout(self.hLayout)
 
         super().__init__()
         self.listWidget.addItem(self)
         self.listWidget.setItemWidget(self, self.widget)
 
-    def update(self, progress):
+    def updateProgress(self, progress):
         self.progress = max(0, self.progress + progress)
         self.progress = min(100, self.progress)
         self.progressBar.setValue(self.progress)
@@ -69,6 +73,11 @@ class FileListItem(QListWidgetItem):
         self.progressBar.setStyleSheet("QProgressBar::chunk{background-color: #F4606C;}")
         # self.textLabel.setVisible(True)
         # self.textLabel.setText("分析错误！")
+
+    def upload(self, info_dict):
+        for key in info_dict.keys():
+            self.info_dict[key] = info_dict[key]
+        self.listWidget.mainWindow.infoTable.insertRecord(info_dict)
 
 class FileList(QListWidget):
     def __init__(self, mainWindow):
@@ -172,11 +181,24 @@ class FileList(QListWidget):
             path = self.item(self.currentRow()).cpath
             self.mainWindow.imageArea.open(path)
 
-    def update(self, index, progress):
+    def updateProgress(self, index, progress):
         try:
-            self.item(index).update(progress)
+            self.item(index).updateProgress(progress)
         except:
             return
+
+    def upload(self, index, info_dict):
+        try:
+            self.item(index).upload(info_dict)
+        except Exception as e:
+            # 这个是输出错误的具体原因，这步可以不用加str，输出
+            print('str(e):\t\t', str(e))  # 输出 str(e):		integer division or modulo by zero
+            print('repr(e):\t', repr(e))  # 输出 repr(e):	ZeroDivisionError('integer division or modulo by zero',)
+            print('traceback.print_exc():')
+
+            # 以下两步都是输出错误的具体位置的
+            traceback.print_exc()
+
 
     def error(self, index):
         self.item(index).error()

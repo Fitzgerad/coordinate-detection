@@ -49,16 +49,23 @@ class ImageArea(QScrollArea):
 
             if not self.fitToWindowAct.isChecked():
                 self.imageLabel.adjustSize()
+            else:
+                factor = min(self.width() / self.imageLabel.pixmap().width(),
+                             self.height() / self.imageLabel.pixmap().height())
+                self.scaleImage(factor)
 
     def zoomIn(self):
         self.scaleImage(1.25)
+        self.fitToWindowAct.setChecked(False)
 
     def zoomOut(self):
         self.scaleImage(0.8)
+        self.fitToWindowAct.setChecked(False)
 
     def normalSize(self):
         self.imageLabel.adjustSize()
         self.scaleFactor = 1.0
+        self.fitToWindowAct.setChecked(False)
 
     def fitToWindow(self):
         fitToWindow = self.fitToWindowAct.isChecked()
@@ -96,9 +103,12 @@ class ImageArea(QScrollArea):
         self.mainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
 
     def updateActions(self):
-        self.zoomInAct.setEnabled(not self.fitToWindowAct.isChecked())
-        self.zoomOutAct.setEnabled(not self.fitToWindowAct.isChecked())
-        self.normalSizeAct.setEnabled(not self.fitToWindowAct.isChecked())
+        # self.zoomInAct.setEnabled(not self.fitToWindowAct.isChecked())
+        # self.zoomOutAct.setEnabled(not self.fitToWindowAct.isChecked())
+        # self.normalSizeAct.setEnabled(not self.fitToWindowAct.isChecked())
+        self.zoomInAct.setEnabled(True)
+        self.zoomOutAct.setEnabled(True)
+        self.normalSizeAct.setEnabled(True)
 
     def scaleImage(self, factor):
         self.scaleFactor *= factor
@@ -107,8 +117,8 @@ class ImageArea(QScrollArea):
         self.adjustScrollBar(self.horizontalScrollBar(), factor)
         self.adjustScrollBar(self.verticalScrollBar(), factor)
 
-        self.zoomInAct.setEnabled(self.scaleFactor < 5.0)
-        self.zoomOutAct.setEnabled(self.scaleFactor > 0.2)
+        # self.zoomInAct.setEnabled(self.scaleFactor < 5.0)
+        # self.zoomOutAct.setEnabled(self.scaleFactor > 0.2)
 
     def adjustScrollBar(self, scrollBar, factor):
         scrollBar.setValue(int(factor * scrollBar.value()

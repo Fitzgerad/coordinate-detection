@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 import ui.MainWindow
 import config.uiConfig as uiConfig
+import config.excelConfig as excelConfig
 import sys
-import recognize
+import identify
 import openpyxl
 import xlwt, xlrd, csv
 import pandas as pd
@@ -19,8 +20,9 @@ from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMain
 class Analyser(QObject):
     startSignal = pyqtSignal()
     progressSignal = pyqtSignal(int, int)
+    uploadSingal = pyqtSignal(int, dict)
     errorSignal = pyqtSignal(int)
-    excelSignal = pyqtSignal(str)
+    # excelSignal = pyqtSignal(str)
     closeSignal = pyqtSignal()
 
     def __init__(self, infoTable):
@@ -33,11 +35,38 @@ class Analyser(QObject):
         self.imagePath = copy.deepcopy(imagePath)
 
     def analyse(self):
-        recognize.main(self.imagePath, self.fileList,
-                       self.progressSignal, self.excelSignal)
+        identify.main(self.imagePath, self.errorSignal,
+                       self.progressSignal, self.uploadSingal)
         self.infoTable.isFree = True
         self.infoTable.updateActions()
         self.closeSignal.emit()
+
+class TableItem(QTableWidgetItem):
+    def __init__(self, content, list_item):
+        super().__init__(content)
+        self.list_item = list_item
+
+    def modify(self):
+        try:
+            if self.column() >= 2:
+                if self.column() % 2 == 0:
+                    self.list_item.info_dict['left'] = \
+                        self.text().replace(' ', '').split(',')[0]
+                else:
+                    self.list_item.info_dict['right'] = \
+                        self.text().replace(' ', '').split(',')[0]
+                if self.column() <= 3:
+                    self.list_item.info_dict['up'] = \
+                        self.text().replace(' ', '').split(',')[1]
+                else:
+                    self.list_item.info_dict['down'] = \
+                        self.text().replace(' ', '').split(',')[1]
+            elif self.column() == 0:
+                self.list_item.info_dict['name'] = self.text()
+            elif self.column() == 1:
+                self.list_item.info_dict['type'] = self.text()
+        except:
+            return
 
 class InfoTable(QTableWidget):
     def __init__(self, mainWindow):
@@ -45,12 +74,15 @@ class InfoTable(QTableWidget):
 
         self.mainWindow = mainWindow
         self.isFree = True
+        self.isConnected = True
+        self.header = []
         self.mThread = QThread()
         self.analyser = Analyser(self)
         self.analyser.moveToThread(self.mThread)
         self.analyser.startSignal.connect(self.analyser.analyse)
-        self.analyser.progressSignal.connect(self.analyser.fileList.update)
-        self.analyser.excelSignal.connect(self.analyser.infoTable.open)
+        self.analyser.progressSignal.connect(self.analyser.fileList.updateProgress)
+        self.analyser.uploadSingal.connect(self.analyser.fileList.upload)
+        # self.analyser.excelSignal.connect(self.analyser.infoTable.open)
         self.analyser.errorSignal.connect(self.analyser.fileList.error)
         self.analyser.closeSignal.connect(self.finishAnalyse)
         # self.mThread.started.connect(self.analyser.analyse)
@@ -66,6 +98,15 @@ class InfoTable(QTableWidget):
         self.createActions()
         self.createToolBar()
         self.itemSelectionChanged.connect(self.openImage)
+        self.itemChanged.connect(self.updateValue)
+
+    def updateValue(self, item):
+        self.itemChanged.disconnect(self.updateValue)
+        item.modify()
+        self.changeItem(item.list_item.info_dict, item.row())
+        self.resizeCell()
+        if self.isConnected:
+            self.itemChanged.connect(self.updateValue)
 
     def openImage(self):
         row, col = self.currentRow(), self.currentColumn()
@@ -82,13 +123,11 @@ class InfoTable(QTableWidget):
             if os.path.exists(path):
                 self.mainWindow.imageArea.open(path)
 
-
     # TODO
     def open(self, fileName):
         if fileName:
             self.clear()
             df = pd.read_excel(fileName, header=0)  # read file and set header row
-            print(2)
             self.header = df.columns.ravel().tolist()
             for i in range(len(self.header)):
                 self.header[i] = str(self.header[i])
@@ -98,15 +137,65 @@ class InfoTable(QTableWidget):
             for i in range(len(df.index)):
                 for j in range(len(df.columns)):
                     self.setItem(i, j, QTableWidgetItem(str(df.iat[i, j])))
-            self.resizeRowsToContents()
-            self.resizeColumnsToContents()
+            self.resizeCell()
 
+    def changeItem(self, info_dict, row):
+        self.item(row, 0).setText(info_dict['name'])
+        self.item(row, 1).setText(info_dict['type'])
+        self.item(row, 2).setText(
+            info_dict['left'] + ', ' + info_dict['up'])
+        self.item(row, 3).setText(
+            info_dict['right'] + ', ' + info_dict['up'])
+        self.item(row, 4).setText(
+            info_dict['left'] + ', ' + info_dict['down'])
+        self.item(row, 5).setText(
+            info_dict['right'] + ', ' + info_dict['down'])
+
+    def insertRecord(self, info_dict):
+        if self.header == [] or self.header == None:
+            self.header = excelConfig.COL_TITLES
+            self.setColumnCount(len(self.header))
+            self.setHorizontalHeaderLabels(self.header)
+        row = self.rowCount()
+        list_item = self.mainWindow.fileList.item(row)
+        self.setRowCount(row + 1)
+        try:
+            self.itemChanged.disconnect(self.updateValue)
+        except:
+            pass
+        self.setItem(row, 0, TableItem(info_dict['name'],
+            list_item))
+        self.setItem(row, 1, TableItem(info_dict['type'],
+            list_item))
+        self.setItem(row, 2, TableItem(
+            info_dict['left'] + ', ' + info_dict['up'],
+            list_item))
+        self.setItem(row, 3, TableItem(
+            info_dict['right'] + ', ' + info_dict['up'],
+            list_item))
+        self.setItem(row, 4, TableItem(
+            info_dict['left'] + ', ' + info_dict['down'],
+            list_item))
+        self.setItem(row, 5, TableItem(
+            info_dict['right'] + ', ' + info_dict['down'],
+            list_item))
+        self.resizeCell()
+        if self.isConnected:
+            self.itemChanged.connect(self.updateValue)
+
+    def resizeCell(self):
+        self.resizeColumnsToContents()
+        self.resizeRowsToContents()
 
     # TODO
     def analyse(self):
         imagePath = []
+        self.clear()
+        self.setRowCount(0)
+        self.setColumnCount(0)
+        self.header = []
         for i in range(self.mainWindow.fileList.count()):
-            self.mainWindow.fileList.item(i).progress = 0
+            self.mainWindow.fileList.item(i).updateProgress(-100)
             imagePath.append(self.mainWindow.fileList.item(i).cpath)
         # self.analyser.getImages(imagePath)
         self.mThread.start()

@@ -1,4 +1,4 @@
-import recognize
+import identify
 
 class Test_item():
     def __init__(self):
@@ -18,4 +18,4 @@ class Test_w():
 if __name__ == "__main__":
     list_image_path = ['basemap/测试/02.jpg']
     widget_file_list = Test_w()
-    recognize.main(list_image_path, widget_file_list)
+    identify.main(list_image_path, widget_file_list)

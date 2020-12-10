@@ -213,6 +213,6 @@ def getRegionFromSubArea(img, num='', pSignal=None):
         cv2.drawContours(bk, [box], 0, (0, 255, 0), 3)
     # if SAVE_IMAGES_TAG:
     #     cv2.imwrite('result/images/' + str(num) + "_result.png", bk)
-    print(len(regions))
+    # print(len(regions))
     return regions_bk
 
