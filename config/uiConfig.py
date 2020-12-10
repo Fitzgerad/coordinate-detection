@@ -86,3 +86,8 @@ GRANDLABEL_S = \
         "padding: 0px;" \
         "border: 0px;" \
     "}"
+
+PROGRESSBAR_S = \
+    "QProgressBar::chunk{" \
+        "background-color: #F4606C;" \
+    "}"

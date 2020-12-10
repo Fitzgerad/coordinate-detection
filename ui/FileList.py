@@ -23,7 +23,7 @@ class FileListItem(QListWidgetItem):
         self.frontArea = QWidget(self.widget)
         self.pathLabel = QLabel(self.frontArea)
         self.pathLabel.setText(self.spath)
-        self.pathLabel.setFixedWidth(300)
+        # self.pathLabel.setFixedWidth(300)
         self.vFrontLayout = QVBoxLayout()
         self.vFrontLayout.setContentsMargins(0, 0, 0, 0)
         self.vFrontLayout.setSpacing(0)
@@ -33,8 +33,8 @@ class FileListItem(QListWidgetItem):
         self.backArea = QWidget(self.widget)
         self.progressBar = QProgressBar(self.backArea)
         self.progressBar.setValue(0)
-        self.progressBar.setMinimumWidth(100)
-        self.progressBar.setMaximumWidth(150)
+        # self.progressBar.setMinimumWidth(100)
+        # self.progressBar.setMaximumWidth(150)
         self.progressBar.setAlignment(Qt.AlignCenter)
 
         # self.textLabel = QLabel(self.backArea)
@@ -53,6 +53,8 @@ class FileListItem(QListWidgetItem):
         self.hLayout.setSpacing(0)
         self.hLayout.addWidget(self.frontArea)
         self.hLayout.addWidget(self.backArea)
+        self.hLayout.setStretch(0, 2)
+        self.hLayout.setStretch(1, 1)
         self.widget.setLayout(self.hLayout)
 
         super().__init__()

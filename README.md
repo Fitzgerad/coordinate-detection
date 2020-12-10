@@ -1,3 +1,7 @@
 # coordinate-detection
 
-初步实现全图框选，实现了用较少的框，精确框选坐标，粗调正则表达式，有效提高了坐标识别度，但准确性还需要进一步提升。
+This repository is aimed at the heavy tasks to read a bunch of scanned maps with coordinates maybe written in the corners of the map. We use a visual method to help us reach our goal.
+
+And now, we have a relatively `qt` form which can be loaded almost on all the platform!
+
+Before further introduction, you can use `python __main__.py` to run the whole program and have a test on your own map!

@@ -4,10 +4,7 @@
     <list default="true" id="5b8fa403-558e-496a-9537-a93f1661b6f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/uiConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/uiConfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ImageArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ImageArea.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/InfoTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/InfoTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/MainWindow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usr/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/usr/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/FileList.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/FileList.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +26,7 @@
     <SUITE FILE_PATH="coverage/coordinate_detection$getBaseInfo.coverage" NAME="getBaseInfo Coverage Results" MODIFIED="1606807988806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/coordinate_detection$MainWindow__1_.coverage" NAME="MainWindow (1) Coverage Results" MODIFIED="1605509137599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/coordinate_detection$FileList.coverage" NAME="FileList Coverage Results" MODIFIED="1605495447816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
-    <SUITE FILE_PATH="coverage/coordinate_detection$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1607400770686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/coordinate_detection$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1607414293197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/coordinate_detection$main.coverage" NAME="main Coverage Results" MODIFIED="1605324724574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/coordinate_detection$ImageLabel.coverage" NAME="ImageLabel Coverage Results" MODIFIED="1605445535966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/coordinate_detection$anaxcel.coverage" NAME="anaxcel Coverage Results" MODIFIED="1605513240900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/ui_modules/Anaxcel_PyQt5-master" />
@@ -56,7 +53,7 @@
         <counts>
           <entry key="gitignore" value="4" />
           <entry key="md" value="2" />
-          <entry key="py" value="50" />
+          <entry key="py" value="51" />
           <entry key="spec" value="3" />
         </counts>
       </usages-collector>
@@ -64,32 +61,32 @@
         <counts>
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="50" />
+          <entry key="Python" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="76" />
-          <entry key="py" value="3859" />
+          <entry key="py" value="3924" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3935" />
+          <entry key="Python" value="4000" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.20" value="3" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
     </session>
@@ -102,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="437">
               <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding>
                 <element signature="e#43#63#0" expanded="true" />
@@ -115,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="817">
               <caret line="52" column="45" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="50" />
               <folding>
                 <element signature="e#43#52#0" expanded="true" />
@@ -125,14 +122,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+        <entry file="file://$PROJECT_DIR$/ui/FileList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+            <state relative-caret-position="323">
+              <caret line="42" column="55" lean-forward="true" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
               <folding>
-                <element signature="e#43#63#0" expanded="true" />
-                <marker date="1607400768433" expanded="true" signature="3659:3701" ph="..." />
-                <marker date="1607400768433" expanded="true" signature="4198:4288" ph="..." />
+                <element signature="e#43#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/uiConfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1545">
-              <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
+            <state relative-caret-position="1729">
+              <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -185,12 +180,12 @@
         <option value="$PROJECT_DIR$/mapDetect.py" />
         <option value="$PROJECT_DIR$/config/detectConfig.py" />
         <option value="$PROJECT_DIR$/ui/uiConfig.py" />
-        <option value="$PROJECT_DIR$/ui/FileList.py" />
         <option value="$PROJECT_DIR$/__main__.test.py" />
         <option value="$PROJECT_DIR$/ui/MainWindow.py" />
-        <option value="$PROJECT_DIR$/config/uiConfig.py" />
         <option value="$PROJECT_DIR$/ui/ImageArea.py" />
         <option value="$PROJECT_DIR$/ui/InfoTable.py" />
+        <option value="$PROJECT_DIR$/config/uiConfig.py" />
+        <option value="$PROJECT_DIR$/ui/FileList.py" />
       </list>
     </option>
   </component>
@@ -382,8 +377,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.19932885" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.20469798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.22080536" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -441,13 +437,7 @@
     <entry file="file://$PROJECT_DIR$/ui_enabled.py" />
     <entry file="file://$PROJECT_DIR$/config/readFilePath.py" />
     <entry file="file://$PROJECT_DIR$/config/excelConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -478,13 +468,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/identify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mapDetect.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -505,25 +489,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/FileList.py">
+    <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding>
-            <element signature="e#43#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1634">
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/ImageArea.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="437">
           <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding>
             <element signature="e#43#63#0" expanded="true" />
@@ -532,16 +510,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/uiConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/MainWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="817">
           <caret line="52" column="45" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="50" />
           <folding>
             <element signature="e#43#52#0" expanded="true" />
@@ -549,14 +520,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/InfoTable.py">
+    <entry file="file://$PROJECT_DIR$/config/uiConfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+        <state relative-caret-position="1729">
+          <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/FileList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="42" column="55" lean-forward="true" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
           <folding>
-            <element signature="e#43#63#0" expanded="true" />
-            <marker date="1607400768433" expanded="true" signature="3659:3701" ph="..." />
-            <marker date="1607400768433" expanded="true" signature="4198:4288" ph="..." />
+            <element signature="e#43#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
