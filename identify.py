@@ -77,7 +77,6 @@ def degreePattern(text):
     match2 = pattern2.findall(text)
     if match1:
         match1=set(match1)
-        #print('success:',match1)
         list=['w','W','E','S','s','$','§','5','N']
         list0 = ['°','′','″','’','”','\'','\"','7']
         list1 = [',','，','.']
@@ -137,26 +136,18 @@ def getAllCoor(all_text):
         down = all_text[2][1]
     else:
         down = all_text[3][1]
-    upleft = left + ',' + up
-    upright = right + ',' + up
-    downleft = left + ',' + down
-    downright = right + ',' + down
-    coorlist = [upleft, upright, downleft, downright]
-    return coorlist
+    return left, right, up, down
 
-def main(list_image_path, xSingal, pSignal, eSignal):
-    i=0
-    dicts=[]
-    image=[]
-    for num in range(len(list_image_path)):#每张图
+def main(list_image_path, xSingal, pSignal, uSingal):
+    for num in range(len(list_image_path)):         # 每张图
         try:
             image = list_image_path[num]
             img = cv2.imdecode(np.fromfile(image,dtype=np.uint8),-1)
             region = mapDetect.getRegionFromSubArea(img, str(num), pSignal)
             all_text = []
-            for sub in range(len(region)):#每个子区域
+            for sub in range(len(region)):          # 每个子区域
                 texts = ['°′″','°′″']
-                for sub_region in region[sub]:#每个矩形框
+                for sub_region in region[sub]:      # 每个矩形框
                         d=0
                         if sub_region[0][1]>d:
                             sub_region[0][1]=sub_region[0][1]-d
@@ -181,26 +172,36 @@ def main(list_image_path, xSingal, pSignal, eSignal):
                                 texts[1]=text
                 all_text.append(texts)
                 pSignal.emit(int(num), 10)
-            coorlist = getAllCoor(all_text)
-            print('最终坐标：',coorlist)
-            dict = {'编号': ' ', '类型': '海图','左上坐标':coorlist[0], '右上坐标':coorlist[1],
-              '左下坐标':coorlist[2], '右下坐标':coorlist[3]}
-            dicts.append(dict)
+            left, right, up, down = getAllCoor(all_text)
+
+            dict = {'name': os.path.basename(image).rsplit('.', 1)[0],
+                    'type': '海图',
+                    'left': left,
+                    'right': right,
+                    'up': up,
+                    'down': down,
+                    'index': int(num)}
+            uSingal.emit(int(num), dict)
         except Exception as e:
             # 这个是输出错误的具体原因，这步可以不用加str，输出
             print('str(e):\t\t', str(e))  # 输出 str(e):		integer division or modulo by zero
             print('repr(e):\t', repr(e))  # 输出 repr(e):	ZeroDivisionError('integer division or modulo by zero',)
             print('traceback.print_exc():')
+
             # 以下两步都是输出错误的具体位置的
             traceback.print_exc()
-            # print('traceback.format_exc():\n%s' % traceback.format_exc())
 
-            dict = {'类型': '海图', '左上坐标': ' ', '右上坐标': ' ',
-                    '左下坐标': ' ', '右下坐标': ' '}
-            dicts.append(dict)
+            dict = {'name': os.path.basename(image).rsplit('.', 1)[0],
+                    'type': '海图',
+                    'left': '°′″',
+                    'right': '°′″',
+                    'up': '°′″',
+                    'down': '°′″',
+                    'index': int(num)}
+            # dicts.append(dict)
+            uSingal.emit(int(num), dict)
             xSingal.emit(int(num))
-        print(num)
-    insertInfo(dicts)
-    sheet.saveSheet(appConfig.ds.tempExcelFile)
-    eSignal.emit("cache/excel/temp.xls")
+    # insertInfo(dicts)
+    # sheet.saveSheet(appConfig.ds.tempExcelFile)
+
 

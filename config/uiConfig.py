@@ -31,6 +31,16 @@ INFOTABLE_S = \
         "border: 0px;" \
         "margin: 0px;" \
         "padding: 0px;" \
+        "background: #FFFFFF;" \
+        "qproperty-alternatingRowColors: true;" \
+        "alternate-background-color: #F0F0F4;" \
+    "}" \
+    "QTableWidget::item { " \
+        "qproperty-textAlignment: AlignRight;" \
+    "}" \
+    "QTableWidget::item::selected { " \
+        "color:#F4606C;" \
+        "background:#BEE7E9;" \
     "}"
 
 TOOLBAR_S = \
